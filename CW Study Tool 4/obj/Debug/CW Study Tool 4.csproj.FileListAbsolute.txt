@@ -3,8 +3,8 @@ Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\CW Study Tool 4.exe.config
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\CW Study Tool 4.exe
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\CW Study Tool 4.pdb
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW Study Tool 4.csprojResolveAssemblyReference.cache
-Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.Form1.resources
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.Properties.Resources.resources
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW Study Tool 4.csproj.GenerateResource.Cache
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW Study Tool 4.exe
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW Study Tool 4.pdb
+Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmMain.resources

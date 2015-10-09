@@ -18,7 +18,7 @@ namespace CW_Study_Tool_4
                 SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmMain());
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
