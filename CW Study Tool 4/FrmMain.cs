@@ -22,5 +22,40 @@ namespace CW_Study_Tool_4
         {
 
         }
+
+        private void btnNewWordsWalkthough_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMulltiLearn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReviewWords_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMultiReview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnWordList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
