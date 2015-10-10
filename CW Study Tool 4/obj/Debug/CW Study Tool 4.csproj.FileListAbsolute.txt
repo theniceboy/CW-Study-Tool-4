@@ -8,3 +8,4 @@ Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW Study Tool 4.csproj.Gener
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW Study Tool 4.exe
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW Study Tool 4.pdb
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmMain.resources
+Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmStudy.resources
