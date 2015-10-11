@@ -19,3 +19,4 @@ Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\System.Data.SQLite.xml
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmAddWord.resources
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmMain1.resources
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmMain.resources
+Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmAddGroup.resources

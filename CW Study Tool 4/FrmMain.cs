@@ -30,7 +30,7 @@ namespace CW_Study_Tool_4
             SQLiteCommand cmdCreateTable = new SQLiteCommand("CREATE TABLE IF NOT EXISTS `words` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `word` TEXT, `trans` TEXT, `group` INTEGER, `state` INTEGER);", Gib.con);
             cmdCreateTable.ExecuteNonQuery();
 
-            cmdCreateTable = new SQLiteCommand("CREATE TABLE IF NOT EXISTS `group` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `group` TEXT);", Gib.con);
+            cmdCreateTable = new SQLiteCommand("CREATE TABLE IF NOT EXISTS `groups` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `group` TEXT);", Gib.con);
             cmdCreateTable.ExecuteNonQuery();
         }
 
@@ -42,7 +42,8 @@ namespace CW_Study_Tool_4
 
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
-
+            FrmAddGroup frm = new FrmAddGroup();
+            frm.ShowDialog(this);
         }
 
         private void lvGroups_SelectedIndexChanged(object sender, EventArgs e)
