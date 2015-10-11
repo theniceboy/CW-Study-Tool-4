@@ -1,22 +1,26 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SQLite;
 using System.Drawing;
-using System.IO;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevComponents.DotNetBar.Metro;
+using System.Data.SQLite;
+using System.IO;
 using DevComponents.DotNetBar;
 
 namespace CW_Study_Tool_4
 {
-    public partial class FrmMain : DevComponents.DotNetBar.Metro.MetroForm
+    public partial class FrmMain1 : MetroForm
     {
-        public FrmMain()
+        public FrmMain1()
         {
             InitializeComponent();
         }
+
         void beginCheck()
         {
             if (!Directory.Exists(Gib.compath))
@@ -26,10 +30,10 @@ namespace CW_Study_Tool_4
 
             Gib.con = new SQLiteConnection("Data Source =" + Gib.dbpath);
             Gib.con.Open();
-
+            
             SQLiteCommand cmdCreateTable = new SQLiteCommand("CREATE TABLE IF NOT EXISTS `words` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `word` TEXT, `trans` TEXT, `group` INTEGER, `state` INTEGER);", Gib.con);
             cmdCreateTable.ExecuteNonQuery();
-
+            
             cmdCreateTable = new SQLiteCommand("CREATE TABLE IF NOT EXISTS `group` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `group` TEXT);", Gib.con);
             cmdCreateTable.ExecuteNonQuery();
         }
@@ -40,17 +44,7 @@ namespace CW_Study_Tool_4
             pnWords.BackColor = Color.White;
         }
 
-        private void btnAddGroup_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lvGroups_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddWord_Click(object sender, EventArgs e)
         {
 
         }

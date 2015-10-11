@@ -70,7 +70,7 @@
             this.Setting.Symbol = "";
             this.Setting.SymbolSize = 12F;
             this.Setting.TabIndex = 6;
-            this.Setting.Text = " Keyboard\r\nSetting";
+            this.Setting.Text = " Keyboard\r\nSettings";
             this.Setting.TextColor = System.Drawing.Color.Black;
             // 
             // ShowTraslation
@@ -170,12 +170,12 @@
             this.trans.DisabledBackColor = System.Drawing.Color.White;
             this.trans.Font = new System.Drawing.Font("Segoe UI", 22F);
             this.trans.ForeColor = System.Drawing.Color.Black;
-            this.trans.Location = new System.Drawing.Point(12, 239);
+            this.trans.Location = new System.Drawing.Point(12, 266);
             this.trans.MaxLength = 2147483647;
             this.trans.Multiline = true;
             this.trans.Name = "trans";
             this.trans.PreventEnterBeep = true;
-            this.trans.Size = new System.Drawing.Size(1297, 461);
+            this.trans.Size = new System.Drawing.Size(1297, 434);
             this.trans.TabIndex = 4;
             this.trans.WatermarkColor = System.Drawing.Color.LightGray;
             this.trans.WatermarkText = "(Click the \"Translation\" button to show the translation (or answer) to this word";
@@ -196,13 +196,13 @@
             this.Word.Location = new System.Drawing.Point(12, 13);
             this.Word.Name = "Word";
             this.Word.PreventEnterBeep = true;
-            this.Word.Size = new System.Drawing.Size(1297, 220);
+            this.Word.Size = new System.Drawing.Size(1297, 247);
             this.Word.TabIndex = 3;
             this.Word.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FrmStudy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 779);
             this.Controls.Add(this.btnReplay);
@@ -216,6 +216,7 @@
             this.Controls.Add(this.Word);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.MinimumSize = new System.Drawing.Size(1348, 566);
             this.Name = "FrmStudy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

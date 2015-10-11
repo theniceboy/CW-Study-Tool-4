@@ -88,11 +88,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAddWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddWord.Designer.cs">
+      <DependentUpon>FrmAddWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain1.Designer.cs">
+      <DependentUpon>FrmMain1.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStudy.cs">
       <SubType>Form</SubType>
@@ -103,8 +115,14 @@
     <Compile Include="Gib.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAddWord.resx">
+      <DependentUpon>FrmAddWord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain1.resx">
+      <DependentUpon>FrmMain1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStudy.resx">
       <DependentUpon>FrmStudy.cs</DependentUpon>

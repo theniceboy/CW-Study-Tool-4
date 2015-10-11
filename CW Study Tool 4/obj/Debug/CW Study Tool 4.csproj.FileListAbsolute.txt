@@ -7,7 +7,6 @@ Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.Properties.R
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW Study Tool 4.csproj.GenerateResource.Cache
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW Study Tool 4.exe
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW Study Tool 4.pdb
-Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmMain.resources
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmStudy.resources
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\EntityFramework.dll
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\EntityFramework.SqlServer.dll
@@ -17,3 +16,6 @@ Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\System.Data.SQLite.Linq.dll
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\EntityFramework.xml
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\EntityFramework.SqlServer.xml
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\System.Data.SQLite.xml
+Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmAddWord.resources
+Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmMain1.resources
+Y:\Github\CW-Study-Tool-4\CW Study Tool 4\obj\Debug\CW_Study_Tool_4.FrmMain.resources
