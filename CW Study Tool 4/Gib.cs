@@ -1,9 +1,19 @@
 ﻿using System;
+using System.Data.SQLite;
 
-namespace CW_Study_Tool_2
+namespace CW_Study_Tool_4
 {
     internal class Gib
     {
+        public static string compath = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\CW Soft";
+        public static string hostpath = compath + "\\CW Study Tool 4";
+        public static string dbpath = hostpath + "\\CWStudyTool4.db";
+
+        public static SQLiteConnection con = null;
+
+
+
+        // OLD
         public static string frmlearntext;
 
         public static int studymode;
@@ -16,13 +26,10 @@ namespace CW_Study_Tool_2
          * 6 : Review Game
         */
 
-        public static int[] mem = { 1, 2, 4, 7, 15 };
-
         public static int cstn;
         public static string[] cst1 = new string[10000];
         public static string[] cst2 = new string[10000];
         public static int[] cst3 = new int[10000];
-        public static int[,] his = new int[10000, 6];
 
         public static int today, beginday;
 
@@ -32,9 +39,6 @@ namespace CW_Study_Tool_2
 
         public static bool dosearch;
         public static string searchword;
-
-        public static string compath = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\CW Soft";
-        public static string hostpath = compath + "\\CW Study Tool 4";
     }
 }
 /*

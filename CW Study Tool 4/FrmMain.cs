@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevComponents.DotNetBar.Metro;
-using MySql.Data.MySqlClient;
+using System.Data.SQLite;
+using System.IO;
+using DevComponents.DotNetBar;
 
 namespace CW_Study_Tool_4
 {
@@ -19,60 +21,28 @@ namespace CW_Study_Tool_4
             InitializeComponent();
         }
 
+        void beginCheck()
+        {
+            if (!Directory.Exists(Gib.compath))
+                Directory.CreateDirectory(Gib.compath);
+            if (!Directory.Exists(Gib.hostpath))
+                Directory.CreateDirectory(Gib.hostpath);
+
+            Gib.con = new SQLiteConnection("Data Source =" + Gib.dbpath);
+            Gib.con.Open();
+
+            string sql = "CREATE TABLE IF NOT EXISTS `words` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `word` TEXT, `trans` TEXT, `group` INTEGER, `state` INTEGER);";
+            SQLiteCommand cmdCreateTable = new SQLiteCommand(sql, Gib.con);
+            cmdCreateTable.ExecuteNonQuery();
+
+            sql = "CREATE TABLE IF NOT EXISTS `group` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `group` TEXT);";
+            cmdCreateTable = new SQLiteCommand(sql, Gib.con);
+            cmdCreateTable.ExecuteNonQuery();
+        }
+
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            String myInfo = "欢迎使用 ASP.NET MVC! ";
-
-            ///////////////////获取MYSQ看数据返回值////////////////////////////  
-            MySqlConnection myconn = null;
-            MySqlCommand mycom = null;
-            MySqlDataReader myrec = null;
-
-            //连接字符串拼装  
-            myconn = new MySqlConnection("Host = 127.0.0.1;Database = test;Username = root;Password = fulei");
-
-            //连接  
-            myconn.Open();
-
-            if (myconn.State.ToString() == "Open")
-            {
-                MessageBox.Show("连接MYSQL成功");
-            }
-        }
-
-        private void btnNewWordsWalkthough_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMulltiLearn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReviewWords_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMultiReview_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnWordList_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
-
+            beginCheck();
         }
     }
 }
