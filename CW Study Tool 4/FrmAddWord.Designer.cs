@@ -85,12 +85,12 @@
             this.tbTrans.DisabledBackColor = System.Drawing.Color.White;
             this.tbTrans.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.tbTrans.ForeColor = System.Drawing.Color.Black;
-            this.tbTrans.Location = new System.Drawing.Point(13, 162);
+            this.tbTrans.Location = new System.Drawing.Point(13, 154);
             this.tbTrans.MaxLength = 2147483647;
             this.tbTrans.Multiline = true;
             this.tbTrans.Name = "tbTrans";
             this.tbTrans.PreventEnterBeep = true;
-            this.tbTrans.Size = new System.Drawing.Size(1277, 584);
+            this.tbTrans.Size = new System.Drawing.Size(1277, 592);
             this.tbTrans.TabIndex = 8;
             this.tbTrans.WatermarkColor = System.Drawing.Color.Gainsboro;
             this.tbTrans.WatermarkText = "The translation of the new word (optional), press Ctrl+Enter to add a new word, o" +
@@ -151,8 +151,8 @@
             // 
             // FrmAddWord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1302, 850);
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.btnHelp);
@@ -162,7 +162,7 @@
             this.Controls.Add(this.tbWord);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(947, 515);
             this.Name = "FrmAddWord";

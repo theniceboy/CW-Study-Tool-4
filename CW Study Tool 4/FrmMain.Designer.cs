@@ -180,12 +180,12 @@
             this.tbTrans.DisabledBackColor = System.Drawing.Color.White;
             this.tbTrans.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.tbTrans.ForeColor = System.Drawing.Color.Black;
-            this.tbTrans.Location = new System.Drawing.Point(778, 183);
+            this.tbTrans.Location = new System.Drawing.Point(778, 212);
             this.tbTrans.MaxLength = 2147483647;
             this.tbTrans.Multiline = true;
             this.tbTrans.Name = "tbTrans";
             this.tbTrans.PreventEnterBeep = true;
-            this.tbTrans.Size = new System.Drawing.Size(748, 530);
+            this.tbTrans.Size = new System.Drawing.Size(698, 501);
             this.tbTrans.TabIndex = 13;
             this.tbTrans.WatermarkColor = System.Drawing.Color.Gainsboro;
             this.tbTrans.WatermarkText = "The translation of the new word (optional)";
