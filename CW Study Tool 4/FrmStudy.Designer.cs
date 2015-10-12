@@ -48,9 +48,9 @@
             this.btnReplay.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnReplay.FocusCuesEnabled = false;
             this.btnReplay.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReplay.Location = new System.Drawing.Point(384, 700);
+            this.btnReplay.Location = new System.Drawing.Point(331, 700);
             this.btnReplay.Name = "btnReplay";
-            this.btnReplay.Size = new System.Drawing.Size(180, 79);
+            this.btnReplay.Size = new System.Drawing.Size(200, 79);
             this.btnReplay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnReplay.Symbol = "";
             this.btnReplay.SymbolSize = 12F;
@@ -65,9 +65,9 @@
             this.Setting.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.Setting.FocusCuesEnabled = false;
             this.Setting.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Setting.Location = new System.Drawing.Point(197, 700);
+            this.Setting.Location = new System.Drawing.Point(125, 700);
             this.Setting.Name = "Setting";
-            this.Setting.Size = new System.Drawing.Size(180, 79);
+            this.Setting.Size = new System.Drawing.Size(200, 79);
             this.Setting.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.Setting.Symbol = "";
             this.Setting.SymbolSize = 12F;
@@ -82,9 +82,9 @@
             this.ShowTraslation.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.ShowTraslation.FocusCuesEnabled = false;
             this.ShowTraslation.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ShowTraslation.Location = new System.Drawing.Point(1129, 700);
+            this.ShowTraslation.Location = new System.Drawing.Point(949, 700);
             this.ShowTraslation.Name = "ShowTraslation";
-            this.ShowTraslation.Size = new System.Drawing.Size(180, 79);
+            this.ShowTraslation.Size = new System.Drawing.Size(200, 79);
             this.ShowTraslation.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ShowTraslation.Symbol = "";
             this.ShowTraslation.SymbolSize = 12F;
@@ -99,9 +99,9 @@
             this.btnBad.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnBad.FocusCuesEnabled = false;
             this.btnBad.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBad.Location = new System.Drawing.Point(570, 700);
+            this.btnBad.Location = new System.Drawing.Point(537, 700);
             this.btnBad.Name = "btnBad";
-            this.btnBad.Size = new System.Drawing.Size(180, 79);
+            this.btnBad.Size = new System.Drawing.Size(200, 79);
             this.btnBad.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnBad.Symbol = "";
             this.btnBad.SymbolSize = 12F;
@@ -116,9 +116,9 @@
             this.btnGood.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnGood.FocusCuesEnabled = false;
             this.btnGood.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnGood.Location = new System.Drawing.Point(756, 700);
+            this.btnGood.Location = new System.Drawing.Point(743, 700);
             this.btnGood.Name = "btnGood";
-            this.btnGood.Size = new System.Drawing.Size(180, 79);
+            this.btnGood.Size = new System.Drawing.Size(200, 79);
             this.btnGood.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnGood.Symbol = "";
             this.btnGood.SymbolSize = 12F;
@@ -135,12 +135,12 @@
             this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPrevious.Location = new System.Drawing.Point(12, 700);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(179, 79);
+            this.btnPrevious.Size = new System.Drawing.Size(107, 79);
             this.btnPrevious.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnPrevious.Symbol = "";
             this.btnPrevious.SymbolSize = 12F;
             this.btnPrevious.TabIndex = 10;
-            this.btnPrevious.Text = " Previous";
+            this.btnPrevious.Tooltip = "Previous Word";
             // 
             // btnNext
             // 
@@ -149,14 +149,14 @@
             this.btnNext.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnNext.FocusCuesEnabled = false;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnNext.Location = new System.Drawing.Point(943, 700);
+            this.btnNext.Location = new System.Drawing.Point(1155, 700);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(180, 79);
+            this.btnNext.Size = new System.Drawing.Size(108, 79);
             this.btnNext.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnNext.Symbol = "";
             this.btnNext.SymbolSize = 12F;
             this.btnNext.TabIndex = 11;
-            this.btnNext.Text = " Next";
+            this.btnNext.Tooltip = "Next Word";
             // 
             // trans
             // 
@@ -177,7 +177,7 @@
             this.trans.Multiline = true;
             this.trans.Name = "trans";
             this.trans.PreventEnterBeep = true;
-            this.trans.Size = new System.Drawing.Size(1297, 428);
+            this.trans.Size = new System.Drawing.Size(1435, 428);
             this.trans.TabIndex = 4;
             this.trans.WatermarkColor = System.Drawing.Color.LightGray;
             this.trans.WatermarkText = "(Click the \"Translation\" button to show the translation (or answer) to this word";
@@ -198,7 +198,7 @@
             this.Word.Location = new System.Drawing.Point(12, 13);
             this.Word.Name = "Word";
             this.Word.PreventEnterBeep = true;
-            this.Word.Size = new System.Drawing.Size(1297, 220);
+            this.Word.Size = new System.Drawing.Size(1435, 247);
             this.Word.TabIndex = 3;
             this.Word.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -209,9 +209,9 @@
             // 
             // FrmStudy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1322, 779);
+            this.ClientSize = new System.Drawing.Size(1460, 779);
             this.Controls.Add(this.btnReplay);
             this.Controls.Add(this.Setting);
             this.Controls.Add(this.ShowTraslation);
@@ -228,6 +228,7 @@
             this.MinimumSize = new System.Drawing.Size(1348, 566);
             this.Name = "FrmStudy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmStudy_Load);
             this.ResumeLayout(false);
 
         }

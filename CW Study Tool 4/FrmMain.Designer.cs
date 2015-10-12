@@ -37,6 +37,9 @@
             this.lvGroups = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.cGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddGroup = new DevComponents.DotNetBar.ButtonX();
+            this.btnExport = new DevComponents.DotNetBar.ButtonX();
+            this.tbTrans = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tbWord = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.pnWords.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +56,7 @@
             this.pnWords.Controls.Add(this.lvWords);
             this.pnWords.Location = new System.Drawing.Point(396, 12);
             this.pnWords.Name = "pnWords";
-            this.pnWords.Size = new System.Drawing.Size(376, 780);
+            this.pnWords.Size = new System.Drawing.Size(376, 782);
             this.pnWords.TabIndex = 10;
             // 
             // btnAddWord
@@ -62,6 +65,7 @@
             this.btnAddWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddWord.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
+            this.btnAddWord.Enabled = false;
             this.btnAddWord.FocusCuesEnabled = false;
             this.btnAddWord.Location = new System.Drawing.Point(0, 0);
             this.btnAddWord.Name = "btnAddWord";
@@ -70,7 +74,7 @@
             this.btnAddWord.Symbol = "";
             this.btnAddWord.SymbolSize = 10F;
             this.btnAddWord.TabIndex = 6;
-            this.btnAddWord.Text = " Add Word";
+            this.btnAddWord.Text = " Add Words";
             this.btnAddWord.Click += new System.EventHandler(this.btnAddWord_Click);
             // 
             // lvWords
@@ -88,9 +92,11 @@
             this.columnHeader1});
             this.lvWords.DisabledBackColor = System.Drawing.Color.Empty;
             this.lvWords.ForeColor = System.Drawing.Color.Black;
+            this.lvWords.FullRowSelect = true;
             this.lvWords.Location = new System.Drawing.Point(0, 70);
+            this.lvWords.MultiSelect = false;
             this.lvWords.Name = "lvWords";
-            this.lvWords.Size = new System.Drawing.Size(376, 710);
+            this.lvWords.Size = new System.Drawing.Size(376, 712);
             this.lvWords.TabIndex = 5;
             this.lvWords.UseCompatibleStateImageBehavior = false;
             this.lvWords.View = System.Windows.Forms.View.Details;
@@ -115,9 +121,11 @@
             this.cGroups});
             this.lvGroups.DisabledBackColor = System.Drawing.Color.Empty;
             this.lvGroups.ForeColor = System.Drawing.Color.Black;
+            this.lvGroups.FullRowSelect = true;
             this.lvGroups.Location = new System.Drawing.Point(12, 81);
+            this.lvGroups.MultiSelect = false;
             this.lvGroups.Name = "lvGroups";
-            this.lvGroups.Size = new System.Drawing.Size(376, 711);
+            this.lvGroups.Size = new System.Drawing.Size(376, 713);
             this.lvGroups.TabIndex = 9;
             this.lvGroups.UseCompatibleStateImageBehavior = false;
             this.lvGroups.View = System.Windows.Forms.View.Details;
@@ -135,19 +143,83 @@
             this.btnAddGroup.FocusCuesEnabled = false;
             this.btnAddGroup.Location = new System.Drawing.Point(12, 12);
             this.btnAddGroup.Name = "btnAddGroup";
-            this.btnAddGroup.Size = new System.Drawing.Size(376, 56);
+            this.btnAddGroup.Size = new System.Drawing.Size(185, 56);
             this.btnAddGroup.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddGroup.Symbol = "";
             this.btnAddGroup.SymbolSize = 10F;
             this.btnAddGroup.TabIndex = 8;
-            this.btnAddGroup.Text = " Add Group";
+            this.btnAddGroup.Text = " New Group";
             this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnExport.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
+            this.btnExport.Enabled = false;
+            this.btnExport.FocusCuesEnabled = false;
+            this.btnExport.Location = new System.Drawing.Point(203, 12);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(185, 56);
+            this.btnExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnExport.Symbol = "";
+            this.btnExport.SymbolSize = 10F;
+            this.btnExport.TabIndex = 11;
+            this.btnExport.Text = " Export";
+            // 
+            // tbTrans
+            // 
+            this.tbTrans.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTrans.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tbTrans.Border.Class = "TextBoxBorder";
+            this.tbTrans.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tbTrans.DisabledBackColor = System.Drawing.Color.White;
+            this.tbTrans.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.tbTrans.ForeColor = System.Drawing.Color.Black;
+            this.tbTrans.Location = new System.Drawing.Point(778, 183);
+            this.tbTrans.MaxLength = 2147483647;
+            this.tbTrans.Multiline = true;
+            this.tbTrans.Name = "tbTrans";
+            this.tbTrans.PreventEnterBeep = true;
+            this.tbTrans.Size = new System.Drawing.Size(748, 530);
+            this.tbTrans.TabIndex = 13;
+            this.tbTrans.WatermarkColor = System.Drawing.Color.Gainsboro;
+            this.tbTrans.WatermarkText = "The translation of the new word (optional)";
+            // 
+            // tbWord
+            // 
+            this.tbWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWord.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.tbWord.Border.Class = "TextBoxBorder";
+            this.tbWord.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tbWord.DisabledBackColor = System.Drawing.Color.White;
+            this.tbWord.Font = new System.Drawing.Font("Segoe UI", 22F);
+            this.tbWord.ForeColor = System.Drawing.Color.Black;
+            this.tbWord.Location = new System.Drawing.Point(778, 82);
+            this.tbWord.Name = "tbWord";
+            this.tbWord.PreventEnterBeep = true;
+            this.tbWord.Size = new System.Drawing.Size(748, 95);
+            this.tbWord.TabIndex = 12;
+            this.tbWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbWord.WatermarkColor = System.Drawing.Color.Gainsboro;
+            this.tbWord.WatermarkText = "Word(Needed)";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1410, 804);
+            this.ClientSize = new System.Drawing.Size(1538, 806);
+            this.Controls.Add(this.tbTrans);
+            this.Controls.Add(this.tbWord);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.pnWords);
             this.Controls.Add(this.lvGroups);
             this.Controls.Add(this.btnAddGroup);
@@ -167,11 +239,14 @@
 
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private System.Windows.Forms.Panel pnWords;
-        private DevComponents.DotNetBar.ButtonX btnAddWord;
         private DevComponents.DotNetBar.Controls.ListViewEx lvWords;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private DevComponents.DotNetBar.Controls.ListViewEx lvGroups;
         private System.Windows.Forms.ColumnHeader cGroups;
         private DevComponents.DotNetBar.ButtonX btnAddGroup;
+        private DevComponents.DotNetBar.ButtonX btnExport;
+        private DevComponents.DotNetBar.Controls.TextBoxX tbTrans;
+        private DevComponents.DotNetBar.Controls.TextBoxX tbWord;
+        private DevComponents.DotNetBar.ButtonX btnAddWord;
     }
 }

@@ -26,6 +26,8 @@ namespace CW_Study_Tool_4
             SQLiteCommand cmdAdd = new SQLiteCommand("INSERT INTO groups (`group`) VALUES (@group)", Gib.con);
             cmdAdd.Parameters.AddWithValue("@group", group);
             cmdAdd.ExecuteNonQuery();
+            FrmMain frm = (FrmMain) this.Owner;
+            frm.refreshGroups();
             this.Close();
         }
 
@@ -38,10 +40,9 @@ namespace CW_Study_Tool_4
                 btnAdd.Enabled = false;
                 return;
             }
-            cmdSearch = new SQLiteCommand("SELECT * FROM groups WHERE `id`='@group'", Gib.con);
-            cmdSearch.Parameters.AddWithValue("@group", "1");
+            cmdSearch = new SQLiteCommand("SELECT * FROM groups WHERE `group`=@group", Gib.con);
+            cmdSearch.Parameters.AddWithValue("@group", group);
             reader = cmdSearch.ExecuteReader();
-            //MessageBox.Show(cmdSearch.CommandText);
             if (reader.HasRows)
             {
                 lbError.Text = "Group name exists";
@@ -58,6 +59,14 @@ namespace CW_Study_Tool_4
         {
             btnAdd.Enabled = false;
             lbError.ForeColor = Color.DarkRed;
+        }
+
+        private void tbGroup_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && btnAdd.Enabled)
+            {
+                btnAdd_Click(sender, e);
+            }
         }
     }
 }

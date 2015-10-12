@@ -9,16 +9,11 @@ using DevComponents.DotNetBar;
 
 namespace CW_Study_Tool_4
 {
-    public partial class FrmStudy : DevComponents.DotNetBar.Metro.MetroForm
+    public partial class FrmAddWord_Help : DevComponents.DotNetBar.Metro.MetroForm
     {
-        public FrmStudy()
+        public FrmAddWord_Help()
         {
             InitializeComponent();
-        }
-
-        private void FrmStudy_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

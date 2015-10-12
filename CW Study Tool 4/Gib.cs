@@ -10,6 +10,8 @@ namespace CW_Study_Tool_4
         public static string dbpath = hostpath + "\\CWStudyTool4.db";
 
         public static SQLiteConnection con = null;
+
+        public static string curGroup = "", curWord = "";
         
         // OLD
         public static string frmlearntext;

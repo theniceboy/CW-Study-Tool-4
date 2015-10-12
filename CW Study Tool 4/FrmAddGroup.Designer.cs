@@ -52,6 +52,7 @@
             this.tbGroup.Size = new System.Drawing.Size(783, 67);
             this.tbGroup.TabIndex = 0;
             this.tbGroup.TextChanged += new System.EventHandler(this.tbGroup_TextChanged);
+            this.tbGroup.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbGroup_KeyDown);
             // 
             // btnAdd
             // 
