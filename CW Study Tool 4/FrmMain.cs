@@ -72,7 +72,7 @@ namespace CW_Study_Tool_4
         private void FrmMain_Load(object sender, EventArgs e)
         {
             beginCheck();
-            pnWords.BackColor = Color.White;
+            pnMain.BackColor = pnWords.BackColor = Color.White;
 
             refreshGroups();
         }

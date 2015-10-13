@@ -92,5 +92,11 @@ namespace CW_Study_Tool_4
             FrmMain frm = (FrmMain) this.Owner;
             frm.refreshWords();
         }
+
+        private void FrmAddWord_Load(object sender, EventArgs e)
+        {
+            pnMain.BackColor = Color.White;
+            lbError.ForeColor = Color.DarkRed;
+        }
     }
 }

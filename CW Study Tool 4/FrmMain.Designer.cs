@@ -31,16 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.pnWords = new System.Windows.Forms.Panel();
-            this.btnAddWord = new DevComponents.DotNetBar.ButtonX();
             this.lvWords = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnAddWord = new DevComponents.DotNetBar.ButtonX();
             this.lvGroups = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.cGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddGroup = new DevComponents.DotNetBar.ButtonX();
             this.btnExport = new DevComponents.DotNetBar.ButtonX();
             this.tbTrans = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tbWord = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.pnMain = new System.Windows.Forms.Panel();
             this.pnWords.SuspendLayout();
+            this.pnMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // styleManager1
@@ -52,30 +54,13 @@
             // 
             this.pnWords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnWords.Controls.Add(this.btnAddWord);
+            this.pnWords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnWords.Controls.Add(this.lvWords);
-            this.pnWords.Location = new System.Drawing.Point(396, 12);
+            this.pnWords.ForeColor = System.Drawing.Color.Black;
+            this.pnWords.Location = new System.Drawing.Point(341, 3);
             this.pnWords.Name = "pnWords";
-            this.pnWords.Size = new System.Drawing.Size(376, 782);
+            this.pnWords.Size = new System.Drawing.Size(334, 710);
             this.pnWords.TabIndex = 10;
-            // 
-            // btnAddWord
-            // 
-            this.btnAddWord.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAddWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddWord.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
-            this.btnAddWord.Enabled = false;
-            this.btnAddWord.FocusCuesEnabled = false;
-            this.btnAddWord.Location = new System.Drawing.Point(0, 0);
-            this.btnAddWord.Name = "btnAddWord";
-            this.btnAddWord.Size = new System.Drawing.Size(376, 56);
-            this.btnAddWord.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAddWord.Symbol = "";
-            this.btnAddWord.SymbolSize = 10F;
-            this.btnAddWord.TabIndex = 6;
-            this.btnAddWord.Text = " Add Words";
-            this.btnAddWord.Click += new System.EventHandler(this.btnAddWord_Click);
             // 
             // lvWords
             // 
@@ -93,10 +78,10 @@
             this.lvWords.DisabledBackColor = System.Drawing.Color.Empty;
             this.lvWords.ForeColor = System.Drawing.Color.Black;
             this.lvWords.FullRowSelect = true;
-            this.lvWords.Location = new System.Drawing.Point(0, 70);
+            this.lvWords.Location = new System.Drawing.Point(-2, 61);
             this.lvWords.MultiSelect = false;
             this.lvWords.Name = "lvWords";
-            this.lvWords.Size = new System.Drawing.Size(376, 712);
+            this.lvWords.Size = new System.Drawing.Size(336, 649);
             this.lvWords.TabIndex = 5;
             this.lvWords.UseCompatibleStateImageBehavior = false;
             this.lvWords.View = System.Windows.Forms.View.Details;
@@ -106,6 +91,24 @@
             // 
             this.columnHeader1.Text = "Words";
             this.columnHeader1.Width = 326;
+            // 
+            // btnAddWord
+            // 
+            this.btnAddWord.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAddWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddWord.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
+            this.btnAddWord.Enabled = false;
+            this.btnAddWord.FocusCuesEnabled = false;
+            this.btnAddWord.Location = new System.Drawing.Point(341, 3);
+            this.btnAddWord.Name = "btnAddWord";
+            this.btnAddWord.Size = new System.Drawing.Size(334, 50);
+            this.btnAddWord.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnAddWord.Symbol = "";
+            this.btnAddWord.SymbolSize = 10F;
+            this.btnAddWord.TabIndex = 6;
+            this.btnAddWord.Text = " Add Words";
+            this.btnAddWord.Click += new System.EventHandler(this.btnAddWord_Click);
             // 
             // lvGroups
             // 
@@ -122,10 +125,10 @@
             this.lvGroups.DisabledBackColor = System.Drawing.Color.Empty;
             this.lvGroups.ForeColor = System.Drawing.Color.Black;
             this.lvGroups.FullRowSelect = true;
-            this.lvGroups.Location = new System.Drawing.Point(12, 81);
+            this.lvGroups.Location = new System.Drawing.Point(1, 65);
             this.lvGroups.MultiSelect = false;
             this.lvGroups.Name = "lvGroups";
-            this.lvGroups.Size = new System.Drawing.Size(376, 713);
+            this.lvGroups.Size = new System.Drawing.Size(334, 648);
             this.lvGroups.TabIndex = 9;
             this.lvGroups.UseCompatibleStateImageBehavior = false;
             this.lvGroups.View = System.Windows.Forms.View.Details;
@@ -141,9 +144,9 @@
             this.btnAddGroup.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAddGroup.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
             this.btnAddGroup.FocusCuesEnabled = false;
-            this.btnAddGroup.Location = new System.Drawing.Point(12, 12);
+            this.btnAddGroup.Location = new System.Drawing.Point(0, 3);
             this.btnAddGroup.Name = "btnAddGroup";
-            this.btnAddGroup.Size = new System.Drawing.Size(185, 56);
+            this.btnAddGroup.Size = new System.Drawing.Size(164, 50);
             this.btnAddGroup.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddGroup.Symbol = "";
             this.btnAddGroup.SymbolSize = 10F;
@@ -157,9 +160,9 @@
             this.btnExport.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
             this.btnExport.Enabled = false;
             this.btnExport.FocusCuesEnabled = false;
-            this.btnExport.Location = new System.Drawing.Point(203, 12);
+            this.btnExport.Location = new System.Drawing.Point(169, 3);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(185, 56);
+            this.btnExport.Size = new System.Drawing.Size(164, 50);
             this.btnExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExport.Symbol = "";
             this.btnExport.SymbolSize = 10F;
@@ -180,12 +183,12 @@
             this.tbTrans.DisabledBackColor = System.Drawing.Color.White;
             this.tbTrans.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.tbTrans.ForeColor = System.Drawing.Color.Black;
-            this.tbTrans.Location = new System.Drawing.Point(778, 212);
+            this.tbTrans.Location = new System.Drawing.Point(681, 157);
             this.tbTrans.MaxLength = 2147483647;
             this.tbTrans.Multiline = true;
             this.tbTrans.Name = "tbTrans";
             this.tbTrans.PreventEnterBeep = true;
-            this.tbTrans.Size = new System.Drawing.Size(698, 501);
+            this.tbTrans.Size = new System.Drawing.Size(683, 556);
             this.tbTrans.TabIndex = 13;
             this.tbTrans.WatermarkColor = System.Drawing.Color.Gainsboro;
             this.tbTrans.WatermarkText = "The translation of the new word (optional)";
@@ -203,26 +206,36 @@
             this.tbWord.DisabledBackColor = System.Drawing.Color.White;
             this.tbWord.Font = new System.Drawing.Font("Segoe UI", 22F);
             this.tbWord.ForeColor = System.Drawing.Color.Black;
-            this.tbWord.Location = new System.Drawing.Point(778, 82);
+            this.tbWord.Location = new System.Drawing.Point(681, 65);
             this.tbWord.Name = "tbWord";
             this.tbWord.PreventEnterBeep = true;
-            this.tbWord.Size = new System.Drawing.Size(748, 95);
+            this.tbWord.Size = new System.Drawing.Size(683, 86);
             this.tbWord.TabIndex = 12;
             this.tbWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbWord.WatermarkColor = System.Drawing.Color.Gainsboro;
             this.tbWord.WatermarkText = "Word(Needed)";
             // 
+            // pnMain
+            // 
+            this.pnMain.Controls.Add(this.btnAddWord);
+            this.pnMain.Controls.Add(this.tbTrans);
+            this.pnMain.Controls.Add(this.btnAddGroup);
+            this.pnMain.Controls.Add(this.tbWord);
+            this.pnMain.Controls.Add(this.lvGroups);
+            this.pnMain.Controls.Add(this.btnExport);
+            this.pnMain.Controls.Add(this.pnWords);
+            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.Location = new System.Drawing.Point(0, 0);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(1367, 716);
+            this.pnMain.TabIndex = 14;
+            // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1538, 806);
-            this.Controls.Add(this.tbTrans);
-            this.Controls.Add(this.tbWord);
-            this.Controls.Add(this.btnExport);
-            this.Controls.Add(this.pnWords);
-            this.Controls.Add(this.lvGroups);
-            this.Controls.Add(this.btnAddGroup);
+            this.ClientSize = new System.Drawing.Size(1367, 716);
+            this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -231,6 +244,7 @@
             this.Text = "CW Study Tool 4";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.pnWords.ResumeLayout(false);
+            this.pnMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -248,5 +262,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX tbTrans;
         private DevComponents.DotNetBar.Controls.TextBoxX tbWord;
         private DevComponents.DotNetBar.ButtonX btnAddWord;
+        private System.Windows.Forms.Panel pnMain;
     }
 }

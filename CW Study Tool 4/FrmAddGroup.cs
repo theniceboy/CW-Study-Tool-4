@@ -59,6 +59,7 @@ namespace CW_Study_Tool_4
         {
             btnAdd.Enabled = false;
             lbError.ForeColor = Color.DarkRed;
+            pnMain.BackColor = Color.White;
         }
 
         private void tbGroup_KeyDown(object sender, KeyEventArgs e)

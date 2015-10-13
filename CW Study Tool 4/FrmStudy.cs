@@ -18,7 +18,7 @@ namespace CW_Study_Tool_4
 
         private void FrmStudy_Load(object sender, EventArgs e)
         {
-
+            pnMain.BackColor = Color.White;
         }
     }
 }

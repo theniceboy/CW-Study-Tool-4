@@ -12,7 +12,6 @@ Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\EntityFramework.dll
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\EntityFramework.SqlServer.dll
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\System.Data.SQLite.dll
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\System.Data.SQLite.EF6.dll
-Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\System.Data.SQLite.Linq.dll
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\EntityFramework.xml
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\EntityFramework.SqlServer.xml
 Y:\Github\CW-Study-Tool-4\CW Study Tool 4\bin\Debug\System.Data.SQLite.xml

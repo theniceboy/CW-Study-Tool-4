@@ -34,6 +34,8 @@
             this.tbWord = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnHelp = new DevComponents.DotNetBar.ButtonX();
             this.lbError = new System.Windows.Forms.Label();
+            this.pnMain = new System.Windows.Forms.Panel();
+            this.pnMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClear
@@ -43,9 +45,9 @@
             this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnClear.FocusCuesEnabled = false;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnClear.Location = new System.Drawing.Point(13, 753);
+            this.btnClear.Location = new System.Drawing.Point(0, 679);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(221, 85);
+            this.btnClear.Size = new System.Drawing.Size(196, 74);
             this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnClear.Symbol = "";
             this.btnClear.SymbolSize = 12F;
@@ -61,9 +63,9 @@
             this.btnAdd.Enabled = false;
             this.btnAdd.FocusCuesEnabled = false;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(1069, 753);
+            this.btnAdd.Location = new System.Drawing.Point(958, 679);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(221, 85);
+            this.btnAdd.Size = new System.Drawing.Size(196, 74);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAdd.Symbol = "";
             this.btnAdd.SymbolSize = 12F;
@@ -85,12 +87,12 @@
             this.tbTrans.DisabledBackColor = System.Drawing.Color.White;
             this.tbTrans.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.tbTrans.ForeColor = System.Drawing.Color.Black;
-            this.tbTrans.Location = new System.Drawing.Point(13, 154);
+            this.tbTrans.Location = new System.Drawing.Point(0, 139);
             this.tbTrans.MaxLength = 2147483647;
             this.tbTrans.Multiline = true;
             this.tbTrans.Name = "tbTrans";
             this.tbTrans.PreventEnterBeep = true;
-            this.tbTrans.Size = new System.Drawing.Size(1277, 592);
+            this.tbTrans.Size = new System.Drawing.Size(1154, 534);
             this.tbTrans.TabIndex = 8;
             this.tbTrans.WatermarkColor = System.Drawing.Color.Gainsboro;
             this.tbTrans.WatermarkText = "The translation of the new word (optional), press Ctrl+Enter to add a new word, o" +
@@ -110,10 +112,10 @@
             this.tbWord.DisabledBackColor = System.Drawing.Color.White;
             this.tbWord.Font = new System.Drawing.Font("Segoe UI", 32F);
             this.tbWord.ForeColor = System.Drawing.Color.Black;
-            this.tbWord.Location = new System.Drawing.Point(13, 13);
+            this.tbWord.Location = new System.Drawing.Point(0, 12);
             this.tbWord.Name = "tbWord";
             this.tbWord.PreventEnterBeep = true;
-            this.tbWord.Size = new System.Drawing.Size(1277, 135);
+            this.tbWord.Size = new System.Drawing.Size(1154, 121);
             this.tbWord.TabIndex = 7;
             this.tbWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbWord.WatermarkColor = System.Drawing.Color.Gainsboro;
@@ -128,9 +130,9 @@
             this.btnHelp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnHelp.FocusCuesEnabled = false;
             this.btnHelp.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnHelp.Location = new System.Drawing.Point(240, 753);
+            this.btnHelp.Location = new System.Drawing.Point(202, 679);
             this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(221, 85);
+            this.btnHelp.Size = new System.Drawing.Size(196, 74);
             this.btnHelp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnHelp.Symbol = "";
             this.btnHelp.SymbolSize = 12F;
@@ -142,34 +144,48 @@
             // 
             this.lbError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lbError.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbError.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbError.Location = new System.Drawing.Point(467, 768);
+            this.lbError.ForeColor = System.Drawing.Color.Black;
+            this.lbError.Location = new System.Drawing.Point(404, 693);
             this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(596, 61);
+            this.lbError.Size = new System.Drawing.Size(548, 54);
             this.lbError.TabIndex = 12;
+            // 
+            // pnMain
+            // 
+            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.pnMain.Controls.Add(this.lbError);
+            this.pnMain.Controls.Add(this.tbWord);
+            this.pnMain.Controls.Add(this.btnHelp);
+            this.pnMain.Controls.Add(this.tbTrans);
+            this.pnMain.Controls.Add(this.btnClear);
+            this.pnMain.Controls.Add(this.btnAdd);
+            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.ForeColor = System.Drawing.Color.Black;
+            this.pnMain.Location = new System.Drawing.Point(0, 0);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(1157, 756);
+            this.pnMain.TabIndex = 13;
             // 
             // FrmAddWord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1302, 850);
-            this.Controls.Add(this.lbError);
-            this.Controls.Add(this.btnHelp);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.tbTrans);
-            this.Controls.Add(this.tbWord);
+            this.ClientSize = new System.Drawing.Size(1157, 756);
+            this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(947, 515);
+            this.MinimumSize = new System.Drawing.Size(845, 466);
             this.Name = "FrmAddWord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CW Study Tool - Add Words";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAddWord_FormClosing);
+            this.Load += new System.EventHandler(this.FrmAddWord_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmKeyDown);
+            this.pnMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -182,5 +198,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX tbWord;
         private DevComponents.DotNetBar.ButtonX btnHelp;
         private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.Panel pnMain;
     }
 }
