@@ -117,10 +117,5 @@ namespace CW_Study_Tool_4
                 loadWord();
             }
         }
-
-        private void buttonX6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

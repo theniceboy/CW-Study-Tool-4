@@ -78,7 +78,7 @@
             this.pnWords.ForeColor = System.Drawing.Color.Black;
             this.pnWords.Location = new System.Drawing.Point(341, 3);
             this.pnWords.Name = "pnWords";
-            this.pnWords.Size = new System.Drawing.Size(334, 650);
+            this.pnWords.Size = new System.Drawing.Size(334, 654);
             this.pnWords.TabIndex = 10;
             // 
             // btnAddWord
@@ -86,6 +86,7 @@
             this.btnAddWord.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAddWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddWord.BackColor = System.Drawing.Color.White;
             this.btnAddWord.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
             this.btnAddWord.Enabled = false;
             this.btnAddWord.FocusCuesEnabled = false;
@@ -119,7 +120,7 @@
             this.lvWords.Location = new System.Drawing.Point(0, 62);
             this.lvWords.MultiSelect = false;
             this.lvWords.Name = "lvWords";
-            this.lvWords.Size = new System.Drawing.Size(334, 588);
+            this.lvWords.Size = new System.Drawing.Size(334, 592);
             this.lvWords.TabIndex = 5;
             this.lvWords.UseCompatibleStateImageBehavior = false;
             this.lvWords.View = System.Windows.Forms.View.Details;
@@ -148,7 +149,7 @@
             this.lvGroups.Location = new System.Drawing.Point(1, 65);
             this.lvGroups.MultiSelect = false;
             this.lvGroups.Name = "lvGroups";
-            this.lvGroups.Size = new System.Drawing.Size(334, 588);
+            this.lvGroups.Size = new System.Drawing.Size(334, 592);
             this.lvGroups.TabIndex = 9;
             this.lvGroups.UseCompatibleStateImageBehavior = false;
             this.lvGroups.View = System.Windows.Forms.View.Details;
@@ -162,6 +163,7 @@
             // btnAddGroup
             // 
             this.btnAddGroup.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAddGroup.BackColor = System.Drawing.Color.White;
             this.btnAddGroup.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
             this.btnAddGroup.FocusCuesEnabled = false;
             this.btnAddGroup.Location = new System.Drawing.Point(0, 3);
@@ -178,6 +180,7 @@
             // btnExport
             // 
             this.btnExport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnExport.BackColor = System.Drawing.Color.White;
             this.btnExport.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
             this.btnExport.Enabled = false;
             this.btnExport.FocusCuesEnabled = false;
@@ -193,6 +196,7 @@
             // 
             // pnMain
             // 
+            this.pnMain.BackColor = System.Drawing.Color.White;
             this.pnMain.Controls.Add(this.radialMenu);
             this.pnMain.Controls.Add(this.pnLearn);
             this.pnMain.Controls.Add(this.btnAddGroup);
@@ -200,19 +204,22 @@
             this.pnMain.Controls.Add(this.btnExport);
             this.pnMain.Controls.Add(this.pnWords);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.ForeColor = System.Drawing.Color.Black;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1026, 656);
+            this.pnMain.Size = new System.Drawing.Size(1027, 660);
             this.pnMain.TabIndex = 14;
             // 
             // radialMenu
             // 
             this.radialMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radialMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.radialMenu.ForeColor = System.Drawing.Color.Black;
             this.radialMenu.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.radialMenuItem1,
             this.radialMenuItem2,
             this.radialMenuItem3});
-            this.radialMenu.Location = new System.Drawing.Point(971, 9);
+            this.radialMenu.Location = new System.Drawing.Point(972, 9);
             this.radialMenu.Name = "radialMenu";
             this.radialMenu.Size = new System.Drawing.Size(50, 50);
             this.radialMenu.Symbol = "";
@@ -239,27 +246,31 @@
             this.pnLearn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnLearn.Controls.Add(this.flpControls);
+            this.pnLearn.ForeColor = System.Drawing.Color.Black;
             this.pnLearn.Location = new System.Drawing.Point(681, 65);
             this.pnLearn.Name = "pnLearn";
-            this.pnLearn.Size = new System.Drawing.Size(342, 588);
+            this.pnLearn.Size = new System.Drawing.Size(343, 592);
             this.pnLearn.TabIndex = 12;
             // 
             // flpControls
             // 
+            this.flpControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.flpControls.Controls.Add(this.gpOperations);
             this.flpControls.Controls.Add(this.gpStudy);
             this.flpControls.Controls.Add(this.gpExams);
             this.flpControls.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpControls.ForeColor = System.Drawing.Color.Black;
             this.flpControls.Location = new System.Drawing.Point(0, 0);
             this.flpControls.Name = "flpControls";
-            this.flpControls.Size = new System.Drawing.Size(342, 588);
+            this.flpControls.Size = new System.Drawing.Size(343, 592);
             this.flpControls.TabIndex = 12;
             // 
             // gpOperations
             // 
             this.gpOperations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gpOperations.CanvasColor = System.Drawing.SystemColors.Control;
+            this.gpOperations.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gpOperations.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.gpOperations.Controls.Add(this.buttonX5);
             this.gpOperations.Controls.Add(this.buttonX6);
@@ -331,12 +342,11 @@
             this.buttonX6.SymbolSize = 15F;
             this.buttonX6.TabIndex = 7;
             this.buttonX6.Text = " Edit Word";
-            this.buttonX6.Click += new System.EventHandler(this.buttonX6_Click);
             // 
             // gpStudy
             // 
             this.gpStudy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gpStudy.CanvasColor = System.Drawing.SystemColors.Control;
+            this.gpStudy.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gpStudy.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.gpStudy.Controls.Add(this.buttonX2);
             this.gpStudy.Controls.Add(this.buttonX1);
@@ -412,7 +422,7 @@
             // gpExams
             // 
             this.gpExams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gpExams.CanvasColor = System.Drawing.SystemColors.Control;
+            this.gpExams.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gpExams.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.gpExams.Controls.Add(this.buttonX3);
             this.gpExams.Controls.Add(this.buttonX4);
@@ -489,7 +499,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1026, 656);
+            this.ClientSize = new System.Drawing.Size(1027, 660);
             this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
