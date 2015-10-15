@@ -66,7 +66,8 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(227, 77);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAdd.Symbol = "";
+            this.btnAdd.Symbol = "58826";
+            this.btnAdd.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.btnAdd.SymbolSize = 15F;
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = " Add";
@@ -75,8 +76,9 @@
             // lbError
             // 
             this.lbError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lbError.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbError.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbError.ForeColor = System.Drawing.Color.Black;
             this.lbError.Location = new System.Drawing.Point(12, 92);
             this.lbError.Name = "lbError";
             this.lbError.Size = new System.Drawing.Size(472, 54);
@@ -84,10 +86,12 @@
             // 
             // pnMain
             // 
+            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnMain.Controls.Add(this.lbError);
             this.pnMain.Controls.Add(this.tbGroup);
             this.pnMain.Controls.Add(this.btnAdd);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.ForeColor = System.Drawing.Color.Black;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(717, 156);

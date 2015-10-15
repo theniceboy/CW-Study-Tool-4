@@ -49,8 +49,9 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(196, 74);
             this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClear.Symbol = "";
-            this.btnClear.SymbolSize = 12F;
+            this.btnClear.Symbol = "57676";
+            this.btnClear.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnClear.SymbolSize = 13F;
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = " Clear";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -67,8 +68,9 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(196, 74);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAdd.Symbol = "";
-            this.btnAdd.SymbolSize = 12F;
+            this.btnAdd.Symbol = "58826";
+            this.btnAdd.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnAdd.SymbolSize = 13F;
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = " Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -176,6 +178,7 @@
             this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(845, 466);

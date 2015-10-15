@@ -72,7 +72,7 @@ namespace CW_Study_Tool_4
         private void FrmMain_Load(object sender, EventArgs e)
         {
             beginCheck();
-            pnMain.BackColor = pnWords.BackColor = Color.White;
+            pnMain.BackColor = pnWords.BackColor = pnLearn.BackColor = flpControls.BackColor = Color.White;
 
             refreshGroups();
         }
@@ -116,6 +116,11 @@ namespace CW_Study_Tool_4
                 Gib.curWord = lvGroups.SelectedItems[0].Text;
                 loadWord();
             }
+        }
+
+        private void buttonX6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
