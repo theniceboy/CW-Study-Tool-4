@@ -117,9 +117,365 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnReplay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnReplay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="btnReplay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>319, 814</value>
+  </data>
+  <data name="btnReplay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 79</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnReplay.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnReplay.Text" xml:space="preserve">
+    <value> Replay</value>
+  </data>
+  <data name="btnReplay.Tooltip" xml:space="preserve">
+    <value>Let your computer read this word</value>
+  </data>
+  <data name="&gt;&gt;btnReplay.Name" xml:space="preserve">
+    <value>btnReplay</value>
+  </data>
+  <data name="&gt;&gt;btnReplay.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.ButtonX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;btnReplay.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;btnReplay.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Setting.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="Setting.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="Setting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 814</value>
+  </data>
+  <data name="Setting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 79</value>
+  </data>
+  <data name="Setting.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Setting.Text" xml:space="preserve">
+    <value> Word List</value>
+  </data>
+  <data name="Setting.Tooltip" xml:space="preserve">
+    <value>Show all the words that you're now currently learning</value>
+  </data>
+  <data name="&gt;&gt;Setting.Name" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="&gt;&gt;Setting.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.ButtonX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;Setting.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;Setting.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ShowTraslation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ShowTraslation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="ShowTraslation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>881, 814</value>
+  </data>
+  <data name="ShowTraslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 79</value>
+  </data>
+  <data name="ShowTraslation.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="ShowTraslation.Text" xml:space="preserve">
+    <value> Traslation</value>
+  </data>
+  <data name="ShowTraslation.Tooltip" xml:space="preserve">
+    <value>Show the translation (answer) of this word</value>
+  </data>
+  <data name="&gt;&gt;ShowTraslation.Name" xml:space="preserve">
+    <value>ShowTraslation</value>
+  </data>
+  <data name="&gt;&gt;ShowTraslation.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.ButtonX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;ShowTraslation.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;ShowTraslation.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnBad.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnBad.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="btnBad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 814</value>
+  </data>
+  <data name="btnBad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 79</value>
+  </data>
+  <data name="btnBad.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnBad.Text" xml:space="preserve">
+    <value> Forgot
+( 0 )</value>
+  </data>
+  <data name="btnBad.Tooltip" xml:space="preserve">
+    <value>If you forgot this word, click this button</value>
+  </data>
+  <data name="&gt;&gt;btnBad.Name" xml:space="preserve">
+    <value>btnBad</value>
+  </data>
+  <data name="&gt;&gt;btnBad.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.ButtonX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;btnBad.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;btnBad.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnGood.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnGood.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="btnGood.Location" type="System.Drawing.Point, System.Drawing">
+    <value>675, 814</value>
+  </data>
+  <data name="btnGood.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 79</value>
+  </data>
+  <data name="btnGood.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnGood.Text" xml:space="preserve">
+    <value> Remember
+( 0 )</value>
+  </data>
+  <data name="btnGood.Tooltip" xml:space="preserve">
+    <value>If you still remember this word, click on this button</value>
+  </data>
+  <data name="&gt;&gt;btnGood.Name" xml:space="preserve">
+    <value>btnGood</value>
+  </data>
+  <data name="&gt;&gt;btnGood.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.ButtonX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;btnGood.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;btnGood.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="btnPrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnPrevious.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="btnPrevious.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 814</value>
+  </data>
+  <data name="btnPrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 79</value>
+  </data>
+  <data name="btnPrevious.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnPrevious.Tooltip" xml:space="preserve">
+    <value>Previous Word</value>
+  </data>
+  <data name="&gt;&gt;btnPrevious.Name" xml:space="preserve">
+    <value>btnPrevious</value>
+  </data>
+  <data name="&gt;&gt;btnPrevious.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.ButtonX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;btnPrevious.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;btnPrevious.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btnNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnNext.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="btnNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1087, 814</value>
+  </data>
+  <data name="btnNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 79</value>
+  </data>
+  <data name="btnNext.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnNext.Tooltip" xml:space="preserve">
+    <value>Next Word (choose remember or forgot to enable this button)</value>
+  </data>
+  <data name="&gt;&gt;btnNext.Name" xml:space="preserve">
+    <value>btnNext</value>
+  </data>
+  <data name="&gt;&gt;btnNext.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.ButtonX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;btnNext.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;btnNext.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tbTrans.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="tbTrans.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 22pt</value>
+  </data>
+  <data name="tbTrans.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 245</value>
+  </data>
+  <data name="tbTrans.MaxLength" type="System.Int32, mscorlib">
+    <value>2147483647</value>
+  </data>
+  <data name="tbTrans.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tbTrans.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1538, 563</value>
+  </data>
+  <data name="tbTrans.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tbTrans.WatermarkText" xml:space="preserve">
+    <value>(Click the "Translation" button to show the translation (answer) to this word</value>
+  </data>
+  <data name="&gt;&gt;tbTrans.Name" xml:space="preserve">
+    <value>tbTrans</value>
+  </data>
+  <data name="&gt;&gt;tbTrans.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.Controls.TextBoxX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;tbTrans.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;tbTrans.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="tbWord.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="tbWord.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 55pt</value>
+  </data>
+  <data name="tbWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 12</value>
+  </data>
+  <data name="tbWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1538, 227</value>
+  </data>
+  <data name="tbWord.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tbWord.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;tbWord.Name" xml:space="preserve">
+    <value>tbWord</value>
+  </data>
+  <data name="&gt;&gt;tbWord.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.Controls.TextBoxX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;tbWord.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;tbWord.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <metadata name="styleManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1408, 809</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 37</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Shortcuts</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sbUseShortcut.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="sbUseShortcut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1408, 849</value>
+  </data>
+  <data name="sbUseShortcut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 44</value>
+  </data>
+  <data name="sbUseShortcut.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;sbUseShortcut.Name" xml:space="preserve">
+    <value>sbUseShortcut</value>
+  </data>
+  <data name="&gt;&gt;sbUseShortcut.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.Controls.SwitchButton, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;sbUseShortcut.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;sbUseShortcut.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Player.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Player.Location" type="System.Drawing.Point, System.Drawing">
+    <value>518, 323</value>
+  </data>
   <data name="Player.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
@@ -130,5 +486,110 @@
         AAALAAAACwD//wsA//8LAAAACAACAAAAAAAIAAIAAAAAAAgAAgAAAAAACAACAAAAAAALAAAA4AMAADAB
         AAAL
 </value>
+  </data>
+  <data name="Player.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 36</value>
+  </data>
+  <data name="Player.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="Player.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Player.Name" xml:space="preserve">
+    <value>Player</value>
+  </data>
+  <data name="&gt;&gt;Player.Type" xml:space="preserve">
+    <value>AxWMPLib.AxWindowsMediaPlayer, AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Player.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;Player.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonX1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="buttonX1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="buttonX1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1202, 814</value>
+  </data>
+  <data name="buttonX1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 79</value>
+  </data>
+  <data name="buttonX1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="buttonX1.Text" xml:space="preserve">
+    <value> Statistics</value>
+  </data>
+  <data name="buttonX1.Tooltip" xml:space="preserve">
+    <value>Show the statisitics</value>
+  </data>
+  <data name="&gt;&gt;buttonX1.Name" xml:space="preserve">
+    <value>buttonX1</value>
+  </data>
+  <data name="&gt;&gt;buttonX1.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.ButtonX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;buttonX1.Parent" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;buttonX1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pnMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1541, 896</value>
+  </data>
+  <data name="pnMain.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;pnMain.Name" xml:space="preserve">
+    <value>pnMain</value>
+  </data>
+  <data name="&gt;&gt;pnMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>15, 37</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1541, 896</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;styleManager1.Name" xml:space="preserve">
+    <value>styleManager1</value>
+  </data>
+  <data name="&gt;&gt;styleManager1.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.StyleManager, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmStudy</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.Metro.MetroForm, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
   </data>
 </root>

@@ -126,6 +126,7 @@ namespace CW_Study_Tool_4
 
             SQLiteCommand cmdSearch;
             SQLiteDataReader reader;
+            int tmp;
 
             cmdSearch = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group", Gib.con);
             cmdSearch.Parameters.AddWithValue("@group", Gib.curGroup);
@@ -135,6 +136,9 @@ namespace CW_Study_Tool_4
                 ListViewItem lvItem = new ListViewItem();
                 lvItem.Tag = Convert.ToInt32(reader["id"]);
                 lvItem.Text = reader["word"].ToString();
+                lvItem.ToolTipText = reader["trans"].ToString();
+                tmp = Convert.ToInt32(reader["state"]);
+                lvItem.ForeColor = (tmp == 0 ? Color.Black : (tmp == 1 ? Color.Green : Color.DarkRed));
                 lvWords.Items.Add(lvItem);
             }
 
@@ -224,7 +228,9 @@ namespace CW_Study_Tool_4
 
         private void btnMultiRoundStudy_Click(object sender, EventArgs e)
         {
-
+            Gib.studymode = 1;
+            FrmStudy frm = new FrmStudy();
+            frm.ShowDialog(this);
         }
 
         private void btnQuickExam_Click(object sender, EventArgs e)
@@ -245,6 +251,26 @@ namespace CW_Study_Tool_4
         private void rmSettings_ItemClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void pnMain_BackColorChanged(object sender, EventArgs e)
+        {
+            pnMain.BackColor = Color.White;
+        }
+
+        private void pnWords_BackColorChanged(object sender, EventArgs e)
+        {
+            pnWords.BackColor = Color.White;
+        }
+
+        private void pnLearn_BackColorChanged(object sender, EventArgs e)
+        {
+            pnLearn.BackColor = Color.White;
+        }
+
+        private void flpControls_BackColorChanged(object sender, EventArgs e)
+        {
+            flpControls.BackColor = Color.White;
         }
     }
 }

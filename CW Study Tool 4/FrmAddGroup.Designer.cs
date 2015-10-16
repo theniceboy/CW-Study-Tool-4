@@ -86,7 +86,7 @@
             // 
             // pnMain
             // 
-            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pnMain.Controls.Add(this.lbError);
             this.pnMain.Controls.Add(this.tbGroup);
             this.pnMain.Controls.Add(this.btnAdd);

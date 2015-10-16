@@ -141,6 +141,9 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudy.en-001.resx">
+      <DependentUpon>FrmStudy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmStudy.resx">
       <DependentUpon>FrmStudy.cs</DependentUpon>
     </EmbeddedResource>

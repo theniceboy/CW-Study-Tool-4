@@ -23,6 +23,9 @@ namespace CW_Study_Tool_4
         private List<Gib.Word> words = new List<Gib.Word>();
         private string originTitle = "";
         private int cur = 0, wordCountThisRound = 0;
+        private bool willFinish = false;
+        List<int> stateList = new List<int>();
+        private int round = 0, js = 1;
 
         Thread tsp;
         SpeechSynthesizer spr = new SpeechSynthesizer();
@@ -31,7 +34,7 @@ namespace CW_Study_Tool_4
         {
             pnMain.BackColor = Color.White;
 
-            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group", Gib.con);
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group", Gib.con); // ORDER BY `word`
             cmd.Parameters.AddWithValue("@group", Gib.curGroup);
             SQLiteDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -44,6 +47,15 @@ namespace CW_Study_Tool_4
                 words.Add(item);
             }
             refreshState();
+            wordCountThisRound = words.Count - goodCount(true);
+            if (Gib.studymode == 1 && words[cur].state == 1)
+            {
+                --js;
+                btnNext_Click(sender, e);
+            }
+            refreshGoodBadCount();
+
+            stateList.Add(goodCount(true));
         }
         
         private void ReadWord()
@@ -81,29 +93,31 @@ namespace CW_Study_Tool_4
         {
             int count = 0, i;
             for (i = 0; i < words.Count; ++i)
-                if (words[cur].state == 3)
+                if (words[i].state == 2)
                     ++count;
             return count;
         }
 
-        void refreshState()
+        void refreshState(bool doReplay = true)
         {
             if (Gib.studymode == 0)
                 this.Text = originTitle + " ( " + (cur + 1) + " / " + words.Count + " )";
             else
-                this.Text = originTitle + " ( " + goodCount(false) + " / " + wordCountThisRound + " )";
+                this.Text = originTitle + " ( " + js + " / " + wordCountThisRound + " )";
             tbWord.Text = words[cur].word;
-            replay();
+            if (doReplay)
+                replay();
             btnGood.Checked = (words[cur].state == 1);
             btnBad.Checked = (words[cur].state == 2);
             if (Gib.studymode == 0)
             {
-                btnPrevious.Enabled = (cur > -1);
-                btnNext.Enabled = (cur < words.Count);
+                btnPrevious.Enabled = (cur > 0);
+                willFinish = (cur == words.Count - 1);
             }
             else
             {
-                btnPrevious.Enabled = btnNext.Enabled = false;
+                btnPrevious.Enabled = false;
+                willFinish = true;
                 for (int i = cur - 1; i >= 0; --i)
                     if (words[i].state == 2)
                     {
@@ -113,14 +127,18 @@ namespace CW_Study_Tool_4
                 for (int i = cur + 1; i < words.Count; ++i)
                     if (words[i].state == 2)
                     {
-                        btnNext.Enabled = true;
+                        willFinish = false;
                         break;
                     }
             }
+            btnNext.Enabled = (btnGood.Checked || btnBad.Checked);
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
+            if (!btnPrevious.Enabled)
+                return;
+            --js;
             if (Gib.studymode == 0)
                 --cur;
             else
@@ -135,17 +153,57 @@ namespace CW_Study_Tool_4
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
+            if (!btnNext.Enabled)
+                return;
+            ++js;
+            if (willFinish)
+            {
+                if (Gib.studymode == 0)
+                    this.Close();
+                else
+                {
+                    int badsum = badCount();
+                    if (badsum > 0)
+                    {
+                        int tmp = goodCount(true) - stateList[round];
+                        MessageBox.Show(this,
+                            "You've learn " + tmp + " word" + (tmp > 1 ? "s" : "") + " in this round. Moving to round " +
+                            (round + 2) + "!", "CW Study Tool");
+                        stateList.Add(goodCount(true));
+                        ++round;
+                        wordCountThisRound = words.Count - goodCount(true);
+                        cur = 0;
+                        js = 1;
+                        refreshState(false);
+                        if (words[cur].state == 1)
+                        {
+                            --js;
+                            btnNext_Click(sender, e);
+                        }
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                return;
+            }
             if (Gib.studymode == 0)
-                --cur;
+                ++cur;
             else
-                for (int i = cur - 1; i >= 0; --i)
+                for (int i = cur + 1; i < words.Count; ++i)
                     if (words[i].state == 2)
                     {
                         cur = i;
                         break;
                     }
             refreshState();
+        }
+
+        void refreshGoodBadCount()
+        {
+            btnGood.Text = " Remember\r\n( " + goodCount(true) + " )";
+            btnBad.Text = " Forgot\r\n( " + badCount() + " )";
         }
 
         void updateRemState(int state)
@@ -156,16 +214,22 @@ namespace CW_Study_Tool_4
             cmd.Parameters.AddWithValue("@state", state);
             cmd.Parameters.AddWithValue("@id", words[cur].id);
             cmd.ExecuteNonQuery();
+            Gib.Word item = words[cur];
+            item.state = state;
+            words[cur] = item;
+            refreshGoodBadCount();
         }
 
         private void btnBad_Click(object sender, EventArgs e)
         {
+            btnNext.Enabled = true;
             if (!btnBad.Checked)
                 updateRemState(2);
         }
 
         private void btnGood_Click(object sender, EventArgs e)
         {
+            btnNext.Enabled = true;
             if (!btnGood.Checked)
                 updateRemState(1);
         }
@@ -183,6 +247,32 @@ namespace CW_Study_Tool_4
         private void btnReplay_Click(object sender, EventArgs e)
         {
             replay();
+        }
+
+        private void FrmStudy_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmMain frm = (FrmMain) this.Owner;
+            frm.refreshWords();
+        }
+
+        private void frmKeyDown(object sender, KeyEventArgs e)
+        {
+            if (sbUseShortcut.Value)
+            {
+                if (e.KeyCode == Keys.Up || e.KeyCode == Keys.G)
+                    btnGood_Click(null, null);
+                else if (e.KeyCode == Keys.Down || e.KeyCode == Keys.B)
+                    btnBad_Click(null, null);
+                else if (e.KeyCode == Keys.Left)
+                    btnPrevious_Click(null, null);
+                else if (e.KeyCode == Keys.Right)
+                    btnNext_Click(null, null);
+                else if (e.Control || e.KeyCode == Keys.S)
+                    ShowTraslation_Click(null, null);
+                else if (e.Shift || e.KeyCode == Keys.R)
+                    replay();
+                else if (e.KeyCode == Keys.H) { }
+            }
         }
 
         private void ShowTraslation_Click(object sender, EventArgs e)
