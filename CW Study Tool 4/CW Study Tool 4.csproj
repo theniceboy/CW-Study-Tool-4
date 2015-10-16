@@ -95,6 +95,12 @@
     <Compile Include="FrmAddGroup.Designer.cs">
       <DependentUpon>FrmAddGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditWord.Designer.cs">
+      <DependentUpon>FrmEditWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddWord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAddGroup.resx">
       <DependentUpon>FrmAddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditWord.resx">
+      <DependentUpon>FrmEditWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddWord.resx">
       <DependentUpon>FrmAddWord.cs</DependentUpon>

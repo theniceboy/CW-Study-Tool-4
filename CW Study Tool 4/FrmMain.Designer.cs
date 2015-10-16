@@ -37,12 +37,12 @@
             this.lvGroups = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.cGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddGroup = new DevComponents.DotNetBar.ButtonX();
-            this.btnExport = new DevComponents.DotNetBar.ButtonX();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.dbSelector = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.radialMenu = new DevComponents.DotNetBar.RadialMenu();
-            this.radialMenuItem1 = new DevComponents.DotNetBar.RadialMenuItem();
-            this.radialMenuItem2 = new DevComponents.DotNetBar.RadialMenuItem();
-            this.radialMenuItem3 = new DevComponents.DotNetBar.RadialMenuItem();
+            this.riDelete = new DevComponents.DotNetBar.RadialMenuItem();
+            this.riExport = new DevComponents.DotNetBar.RadialMenuItem();
+            this.riRename = new DevComponents.DotNetBar.RadialMenuItem();
             this.pnLearn = new System.Windows.Forms.Panel();
             this.flpControls = new System.Windows.Forms.FlowLayoutPanel();
             this.gpOperations = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -54,6 +54,7 @@
             this.gpExams = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
+            this.rmGroup = new DevComponents.DotNetBar.RadialMenu();
             this.pnWords.SuspendLayout();
             this.pnMain.SuspendLayout();
             this.pnLearn.SuspendLayout();
@@ -76,9 +77,9 @@
             this.pnWords.Controls.Add(this.btnAddWord);
             this.pnWords.Controls.Add(this.lvWords);
             this.pnWords.ForeColor = System.Drawing.Color.Black;
-            this.pnWords.Location = new System.Drawing.Point(341, 3);
+            this.pnWords.Location = new System.Drawing.Point(384, 3);
             this.pnWords.Name = "pnWords";
-            this.pnWords.Size = new System.Drawing.Size(334, 654);
+            this.pnWords.Size = new System.Drawing.Size(376, 736);
             this.pnWords.TabIndex = 10;
             // 
             // btnAddWord
@@ -87,12 +88,12 @@
             this.btnAddWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddWord.BackColor = System.Drawing.Color.White;
-            this.btnAddWord.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
+            this.btnAddWord.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAddWord.Enabled = false;
             this.btnAddWord.FocusCuesEnabled = false;
-            this.btnAddWord.Location = new System.Drawing.Point(0, 0);
+            this.btnAddWord.Location = new System.Drawing.Point(0, 7);
             this.btnAddWord.Name = "btnAddWord";
-            this.btnAddWord.Size = new System.Drawing.Size(334, 50);
+            this.btnAddWord.Size = new System.Drawing.Size(376, 56);
             this.btnAddWord.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddWord.Symbol = "57672";
             this.btnAddWord.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -117,10 +118,10 @@
             this.lvWords.DisabledBackColor = System.Drawing.Color.Empty;
             this.lvWords.ForeColor = System.Drawing.Color.Black;
             this.lvWords.FullRowSelect = true;
-            this.lvWords.Location = new System.Drawing.Point(0, 62);
+            this.lvWords.Location = new System.Drawing.Point(0, 70);
             this.lvWords.MultiSelect = false;
             this.lvWords.Name = "lvWords";
-            this.lvWords.Size = new System.Drawing.Size(334, 592);
+            this.lvWords.Size = new System.Drawing.Size(376, 666);
             this.lvWords.TabIndex = 5;
             this.lvWords.UseCompatibleStateImageBehavior = false;
             this.lvWords.View = System.Windows.Forms.View.Details;
@@ -146,10 +147,10 @@
             this.lvGroups.DisabledBackColor = System.Drawing.Color.Empty;
             this.lvGroups.ForeColor = System.Drawing.Color.Black;
             this.lvGroups.FullRowSelect = true;
-            this.lvGroups.Location = new System.Drawing.Point(1, 65);
+            this.lvGroups.Location = new System.Drawing.Point(1, 73);
             this.lvGroups.MultiSelect = false;
             this.lvGroups.Name = "lvGroups";
-            this.lvGroups.Size = new System.Drawing.Size(334, 592);
+            this.lvGroups.Size = new System.Drawing.Size(376, 666);
             this.lvGroups.TabIndex = 9;
             this.lvGroups.UseCompatibleStateImageBehavior = false;
             this.lvGroups.View = System.Windows.Forms.View.Details;
@@ -164,82 +165,90 @@
             // 
             this.btnAddGroup.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAddGroup.BackColor = System.Drawing.Color.White;
-            this.btnAddGroup.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
+            this.btnAddGroup.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAddGroup.FocusCuesEnabled = false;
-            this.btnAddGroup.Location = new System.Drawing.Point(0, 3);
+            this.btnAddGroup.Location = new System.Drawing.Point(1, 10);
             this.btnAddGroup.Name = "btnAddGroup";
-            this.btnAddGroup.Size = new System.Drawing.Size(193, 50);
+            this.btnAddGroup.Size = new System.Drawing.Size(314, 56);
             this.btnAddGroup.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddGroup.Symbol = "58298";
             this.btnAddGroup.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.btnAddGroup.SymbolSize = 12F;
             this.btnAddGroup.TabIndex = 8;
             this.btnAddGroup.Text = " New Group";
+            this.btnAddGroup.Tooltip = "Add a new group to store some words. The usage of the \'groups\' is to categorize y" +
+    "our words.";
             this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnExport.BackColor = System.Drawing.Color.White;
-            this.btnExport.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
-            this.btnExport.Enabled = false;
-            this.btnExport.FocusCuesEnabled = false;
-            this.btnExport.Location = new System.Drawing.Point(199, 3);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(134, 50);
-            this.btnExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnExport.Symbol = "57694";
-            this.btnExport.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.btnExport.SymbolSize = 12F;
-            this.btnExport.TabIndex = 11;
-            this.btnExport.Text = " Export";
             // 
             // pnMain
             // 
-            this.pnMain.BackColor = System.Drawing.Color.White;
+            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.pnMain.Controls.Add(this.rmGroup);
+            this.pnMain.Controls.Add(this.dbSelector);
             this.pnMain.Controls.Add(this.radialMenu);
             this.pnMain.Controls.Add(this.pnLearn);
             this.pnMain.Controls.Add(this.btnAddGroup);
             this.pnMain.Controls.Add(this.lvGroups);
-            this.pnMain.Controls.Add(this.btnExport);
             this.pnMain.Controls.Add(this.pnWords);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.ForeColor = System.Drawing.Color.Black;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1027, 660);
+            this.pnMain.Size = new System.Drawing.Size(1155, 742);
             this.pnMain.TabIndex = 14;
+            // 
+            // dbSelector
+            // 
+            this.dbSelector.DisplayMember = "Text";
+            this.dbSelector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.dbSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dbSelector.ForeColor = System.Drawing.Color.Black;
+            this.dbSelector.FormattingEnabled = true;
+            this.dbSelector.ItemHeight = 37;
+            this.dbSelector.Location = new System.Drawing.Point(769, 16);
+            this.dbSelector.Name = "dbSelector";
+            this.dbSelector.Size = new System.Drawing.Size(317, 43);
+            this.dbSelector.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dbSelector.TabIndex = 14;
             // 
             // radialMenu
             // 
             this.radialMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radialMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.radialMenu.ForeColor = System.Drawing.Color.Black;
-            this.radialMenu.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.radialMenuItem1,
-            this.radialMenuItem2,
-            this.radialMenuItem3});
-            this.radialMenu.Location = new System.Drawing.Point(972, 9);
+            this.radialMenu.Location = new System.Drawing.Point(1094, 10);
             this.radialMenu.Name = "radialMenu";
-            this.radialMenu.Size = new System.Drawing.Size(50, 50);
-            this.radialMenu.Symbol = "";
-            this.radialMenu.SymbolSize = 13F;
+            this.radialMenu.Size = new System.Drawing.Size(56, 56);
+            this.radialMenu.Symbol = "59576";
+            this.radialMenu.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.radialMenu.SymbolSize = 11F;
             this.radialMenu.TabIndex = 13;
             // 
-            // radialMenuItem1
+            // riDelete
             // 
-            this.radialMenuItem1.Name = "radialMenuItem1";
-            this.radialMenuItem1.Text = "Item 1";
+            this.riDelete.Name = "riDelete";
+            this.riDelete.Symbol = "57676";
+            this.riDelete.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.riDelete.Text = "Delete";
+            this.riDelete.Tooltip = "Delete the seleted group. Warning: this operation will delete this group <b>and a" +
+    "ll the words in this group</b>!";
             // 
-            // radialMenuItem2
+            // riExport
             // 
-            this.radialMenuItem2.Name = "radialMenuItem2";
-            this.radialMenuItem2.Text = "Item 2";
+            this.riExport.Name = "riExport";
+            this.riExport.Symbol = "57694";
+            this.riExport.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.riExport.Text = "Export";
+            this.riExport.Tooltip = "Export the selected group into a file that you can give to anyone else so they ca" +
+    "n import into thier CW Study Tool 4 to study the word you exported";
             // 
-            // radialMenuItem3
+            // riRename
             // 
-            this.radialMenuItem3.Name = "radialMenuItem3";
-            this.radialMenuItem3.Text = "Item 3";
+            this.riRename.Name = "riRename";
+            this.riRename.Symbol = "59485";
+            this.riRename.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.riRename.Text = "Rename";
+            this.riRename.Tooltip = "Rename your group";
             // 
             // pnLearn
             // 
@@ -249,9 +258,9 @@
             this.pnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnLearn.Controls.Add(this.flpControls);
             this.pnLearn.ForeColor = System.Drawing.Color.Black;
-            this.pnLearn.Location = new System.Drawing.Point(681, 65);
+            this.pnLearn.Location = new System.Drawing.Point(766, 73);
             this.pnLearn.Name = "pnLearn";
-            this.pnLearn.Size = new System.Drawing.Size(343, 592);
+            this.pnLearn.Size = new System.Drawing.Size(386, 666);
             this.pnLearn.TabIndex = 12;
             // 
             // flpControls
@@ -264,7 +273,7 @@
             this.flpControls.ForeColor = System.Drawing.Color.Black;
             this.flpControls.Location = new System.Drawing.Point(0, 0);
             this.flpControls.Name = "flpControls";
-            this.flpControls.Size = new System.Drawing.Size(343, 592);
+            this.flpControls.Size = new System.Drawing.Size(386, 666);
             this.flpControls.TabIndex = 12;
             // 
             // gpOperations
@@ -275,9 +284,10 @@
             this.gpOperations.Controls.Add(this.buttonX5);
             this.gpOperations.Controls.Add(this.buttonX6);
             this.gpOperations.DisabledBackColor = System.Drawing.Color.Empty;
+            this.gpOperations.Enabled = false;
             this.gpOperations.Location = new System.Drawing.Point(3, 3);
             this.gpOperations.Name = "gpOperations";
-            this.gpOperations.Size = new System.Drawing.Size(337, 191);
+            this.gpOperations.Size = new System.Drawing.Size(379, 215);
             // 
             // 
             // 
@@ -316,9 +326,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX5.FocusCuesEnabled = false;
-            this.buttonX5.Location = new System.Drawing.Point(3, 81);
+            this.buttonX5.Location = new System.Drawing.Point(3, 91);
             this.buttonX5.Name = "buttonX5";
-            this.buttonX5.Size = new System.Drawing.Size(325, 68);
+            this.buttonX5.Size = new System.Drawing.Size(366, 76);
             this.buttonX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX5.Symbol = "58829";
             this.buttonX5.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -335,7 +345,7 @@
             this.buttonX6.FocusCuesEnabled = false;
             this.buttonX6.Location = new System.Drawing.Point(3, 3);
             this.buttonX6.Name = "buttonX6";
-            this.buttonX6.Size = new System.Drawing.Size(325, 72);
+            this.buttonX6.Size = new System.Drawing.Size(366, 81);
             this.buttonX6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX6.Symbol = "57940";
             this.buttonX6.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -351,9 +361,10 @@
             this.gpStudy.Controls.Add(this.buttonX2);
             this.gpStudy.Controls.Add(this.buttonX1);
             this.gpStudy.DisabledBackColor = System.Drawing.Color.Empty;
-            this.gpStudy.Location = new System.Drawing.Point(3, 200);
+            this.gpStudy.Enabled = false;
+            this.gpStudy.Location = new System.Drawing.Point(3, 224);
             this.gpStudy.Name = "gpStudy";
-            this.gpStudy.Size = new System.Drawing.Size(337, 191);
+            this.gpStudy.Size = new System.Drawing.Size(379, 215);
             // 
             // 
             // 
@@ -392,11 +403,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX2.FocusCuesEnabled = false;
-            this.buttonX2.Location = new System.Drawing.Point(3, 81);
+            this.buttonX2.Location = new System.Drawing.Point(3, 91);
             this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(325, 68);
+            this.buttonX2.Size = new System.Drawing.Size(366, 76);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.Symbol = "57430";
+            this.buttonX2.Symbol = "58837";
             this.buttonX2.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.buttonX2.SymbolSize = 15F;
             this.buttonX2.TabIndex = 8;
@@ -411,9 +422,9 @@
             this.buttonX1.FocusCuesEnabled = false;
             this.buttonX1.Location = new System.Drawing.Point(3, 3);
             this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(325, 72);
+            this.buttonX1.Size = new System.Drawing.Size(366, 81);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.Symbol = "59490";
+            this.buttonX1.Symbol = "57399";
             this.buttonX1.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.buttonX1.SymbolSize = 15F;
             this.buttonX1.TabIndex = 7;
@@ -427,9 +438,10 @@
             this.gpExams.Controls.Add(this.buttonX3);
             this.gpExams.Controls.Add(this.buttonX4);
             this.gpExams.DisabledBackColor = System.Drawing.Color.Empty;
-            this.gpExams.Location = new System.Drawing.Point(3, 397);
+            this.gpExams.Enabled = false;
+            this.gpExams.Location = new System.Drawing.Point(3, 445);
             this.gpExams.Name = "gpExams";
-            this.gpExams.Size = new System.Drawing.Size(337, 191);
+            this.gpExams.Size = new System.Drawing.Size(379, 215);
             // 
             // 
             // 
@@ -468,9 +480,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX3.FocusCuesEnabled = false;
-            this.buttonX3.Location = new System.Drawing.Point(3, 81);
+            this.buttonX3.Location = new System.Drawing.Point(3, 91);
             this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(325, 68);
+            this.buttonX3.Size = new System.Drawing.Size(366, 76);
             this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX3.Symbol = "59511";
             this.buttonX3.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -487,7 +499,7 @@
             this.buttonX4.FocusCuesEnabled = false;
             this.buttonX4.Location = new System.Drawing.Point(3, 3);
             this.buttonX4.Name = "buttonX4";
-            this.buttonX4.Size = new System.Drawing.Size(325, 72);
+            this.buttonX4.Size = new System.Drawing.Size(366, 81);
             this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX4.Symbol = "59510";
             this.buttonX4.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -495,11 +507,28 @@
             this.buttonX4.TabIndex = 7;
             this.buttonX4.Text = " Quick Exam";
             // 
+            // rmGroup
+            // 
+            this.rmGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.rmGroup.ForeColor = System.Drawing.Color.Black;
+            this.rmGroup.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.riDelete,
+            this.riRename,
+            this.riExport});
+            this.rmGroup.Location = new System.Drawing.Point(321, 10);
+            this.rmGroup.Name = "rmGroup";
+            this.rmGroup.Size = new System.Drawing.Size(56, 56);
+            this.rmGroup.Symbol = "57377";
+            this.rmGroup.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.rmGroup.SymbolSize = 13F;
+            this.rmGroup.TabIndex = 15;
+            this.rmGroup.ItemClick += new System.EventHandler(this.rmGroup_ItemClick);
+            // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1027, 660);
+            this.ClientSize = new System.Drawing.Size(1155, 742);
             this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -528,14 +557,13 @@
         private DevComponents.DotNetBar.Controls.ListViewEx lvGroups;
         private System.Windows.Forms.ColumnHeader cGroups;
         private DevComponents.DotNetBar.ButtonX btnAddGroup;
-        private DevComponents.DotNetBar.ButtonX btnExport;
         private DevComponents.DotNetBar.ButtonX btnAddWord;
         private System.Windows.Forms.Panel pnMain;
         private System.Windows.Forms.Panel pnLearn;
         private DevComponents.DotNetBar.RadialMenu radialMenu;
-        private DevComponents.DotNetBar.RadialMenuItem radialMenuItem1;
-        private DevComponents.DotNetBar.RadialMenuItem radialMenuItem2;
-        private DevComponents.DotNetBar.RadialMenuItem radialMenuItem3;
+        private DevComponents.DotNetBar.RadialMenuItem riDelete;
+        private DevComponents.DotNetBar.RadialMenuItem riExport;
+        private DevComponents.DotNetBar.RadialMenuItem riRename;
         private System.Windows.Forms.FlowLayoutPanel flpControls;
         private DevComponents.DotNetBar.Controls.GroupPanel gpOperations;
         private DevComponents.DotNetBar.ButtonX buttonX5;
@@ -546,5 +574,7 @@
         private DevComponents.DotNetBar.Controls.GroupPanel gpExams;
         private DevComponents.DotNetBar.ButtonX buttonX3;
         private DevComponents.DotNetBar.ButtonX buttonX4;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx dbSelector;
+        private DevComponents.DotNetBar.RadialMenu rmGroup;
     }
 }

@@ -11,7 +11,7 @@ using DevComponents.DotNetBar.Controls;
 
 namespace CW_Study_Tool_4
 {
-    public partial class FrmAddWord : DevComponents.DotNetBar.Metro.MetroForm
+    public partial class FrmEditWord : DevComponents.DotNetBar.Metro.MetroForm
     {
         private SQLiteCommand cmdAddWord;
         private SQLiteCommand cmdSearch;
@@ -19,9 +19,9 @@ namespace CW_Study_Tool_4
         private string word = "";
 
         private string strSQLInsert =
-            "INSERT INTO words (word, trans, groupName, state, gamestate) VALUES (@word, @trans, @group, @state, @gamestate)";
+            "UPDATE words SET word=@word, trans=@trans, group=@group WHERE id=@id";
 
-        public FrmAddWord()
+        public FrmEditWord()
         {
             InitializeComponent();
         }
@@ -30,17 +30,16 @@ namespace CW_Study_Tool_4
         {
             if (tbWord.Text.Trim() == "")
             {
-                ToastNotification.Show(this, "New word cannot be empty!", null, 2000, eToastGlowColor.Red);
+                ToastNotification.Show(this, "Word cannot be empty!", null, 2000, eToastGlowColor.Red);
                 return;
             }
             cmdAddWord = new SQLiteCommand(strSQLInsert, Gib.con);
             cmdAddWord.Parameters.AddWithValue("@word", word);
             cmdAddWord.Parameters.AddWithValue("@trans", tbTrans.Text);
             cmdAddWord.Parameters.AddWithValue("@group", Gib.curGroup);
-            cmdAddWord.Parameters.AddWithValue("@state", 0);
-            cmdAddWord.Parameters.AddWithValue("@gamestate", 0);
+            cmdAddWord.Parameters.AddWithValue("@id", 0);
             cmdAddWord.ExecuteNonQuery();
-            btnClear_Click(sender, e);
+            this.Close();
         }
 
         private void btnClear_Click(object sender, EventArgs e)

@@ -11,7 +11,7 @@ namespace CW_Study_Tool_4
 
         public static SQLiteConnection con = null;
 
-        public static string curGroup = "", curWord = "";
+        public static int curDB = 0, curGroup = 0, curWord = 0;
         
         // OLD
         public static string frmlearntext;

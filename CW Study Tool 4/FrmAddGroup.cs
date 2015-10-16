@@ -23,7 +23,7 @@ namespace CW_Study_Tool_4
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SQLiteCommand cmdAdd = new SQLiteCommand("INSERT INTO groups (`group`) VALUES (@group)", Gib.con);
+            SQLiteCommand cmdAdd = new SQLiteCommand("INSERT INTO groups (`group`, `db`) VALUES (@group, " + Gib.curDB + ")", Gib.con);
             cmdAdd.Parameters.AddWithValue("@group", group);
             cmdAdd.ExecuteNonQuery();
             FrmMain frm = (FrmMain) this.Owner;
@@ -40,8 +40,9 @@ namespace CW_Study_Tool_4
                 btnAdd.Enabled = false;
                 return;
             }
-            cmdSearch = new SQLiteCommand("SELECT * FROM groups WHERE `group`=@group", Gib.con);
+            cmdSearch = new SQLiteCommand("SELECT * FROM groups WHERE `group`=@group AND `db`=@db", Gib.con);
             cmdSearch.Parameters.AddWithValue("@group", group);
+            cmdSearch.Parameters.AddWithValue("@db", Gib.curDB);
             reader = cmdSearch.ExecuteReader();
             if (reader.HasRows)
             {

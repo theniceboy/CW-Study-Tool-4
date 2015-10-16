@@ -20,19 +20,81 @@ namespace CW_Study_Tool_4
 
         void beginCheck()
         {
+            bool flag = !File.Exists(Gib.dbpath);
             if (!Directory.Exists(Gib.compath))
                 Directory.CreateDirectory(Gib.compath);
             if (!Directory.Exists(Gib.hostpath))
                 Directory.CreateDirectory(Gib.hostpath);
+            if (!File.Exists(Gib.hostpath + "\\DefaultDB"))
+            {
+                File.WriteAllText(Gib.hostpath + "\\DefaultDB", "0");
+                Gib.curDB = 0;
+            }
+            else
+                try
+                {
+                    Gib.curDB = Convert.ToInt32(File.ReadAllText(Gib.hostpath + "\\DefaultDB"));
+                }
+                catch (Exception)
+                {
+                    throw; // DEBUG ONLY !!!
+                    File.WriteAllText(Gib.hostpath + "\\DefaultDB", "0");
+                    Gib.curDB = 0;
+                }
+
 
             Gib.con = new SQLiteConnection("Data Source =" + Gib.dbpath);
             Gib.con.Open();
 
-            SQLiteCommand cmdCreateTable = new SQLiteCommand("CREATE TABLE IF NOT EXISTS `words` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `word` TEXT, `trans` TEXT, `groupName` TEXT, `state` INTEGER, `gamestate` INTEGER);", Gib.con);
+            SQLiteCommand cmdCreateTable = new SQLiteCommand("CREATE TABLE IF NOT EXISTS `words` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `word` TEXT, `trans` TEXT, `group` INTEGER, `state` INTEGER, `gamestate` INTEGER);", Gib.con);
             cmdCreateTable.ExecuteNonQuery();
 
-            cmdCreateTable = new SQLiteCommand("CREATE TABLE IF NOT EXISTS `groups` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `group` TEXT);", Gib.con);
+            cmdCreateTable = new SQLiteCommand("CREATE TABLE IF NOT EXISTS `groups` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `group` TEXT, `db` INTEGER);", Gib.con);
             cmdCreateTable.ExecuteNonQuery();
+
+            cmdCreateTable = new SQLiteCommand("CREATE TABLE IF NOT EXISTS `db` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT);", Gib.con);
+            cmdCreateTable.ExecuteNonQuery();
+
+            if (flag)
+            {
+                SQLiteCommand cmdAdd = new SQLiteCommand("INSERT INTO db (`name`) VALUES ('Default Collection')", Gib.con);
+                cmdAdd.ExecuteNonQuery();
+            }
+
+            selectDB();
+            refreshDBList();
+        }
+
+        bool selectDB()
+        {
+            SQLiteCommand cmdSearch;
+            SQLiteDataReader reader;
+            cmdSearch = new SQLiteCommand("SELECT * FROM db WHERE `id`=@groupID", Gib.con);
+            cmdSearch.Parameters.AddWithValue("@groupID", Gib.curDB);
+            reader = cmdSearch.ExecuteReader();
+            if (reader.HasRows)
+                return true;
+            cmdSearch = new SQLiteCommand("SELECT * FROM db", Gib.con);
+            reader = cmdSearch.ExecuteReader();
+            reader.Read();
+            Gib.curDB = Convert.ToInt32(reader["id"]);
+            return false;
+        }
+
+        void refreshDBList()
+        {
+            SQLiteCommand cmdSearch;
+            SQLiteDataReader reader;
+            cmdSearch = new SQLiteCommand("SELECT * FROM db", Gib.con);
+            reader = cmdSearch.ExecuteReader();
+            dbSelector.Items.Clear();
+            while (reader.Read())
+            {
+                ComboBoxItem item = new ComboBoxItem(reader["id"].ToString(), reader["name"].ToString());
+                dbSelector.Items.Add(item);
+                if (Convert.ToInt32(reader["id"]) == Gib.curDB)
+                    dbSelector.SelectedItem = item;
+            }
         }
 
         public void refreshGroups()
@@ -42,14 +104,18 @@ namespace CW_Study_Tool_4
             SQLiteCommand cmdSearch;
             SQLiteDataReader reader;
 
-            cmdSearch = new SQLiteCommand("SELECT * FROM groups", Gib.con);
+            cmdSearch = new SQLiteCommand("SELECT * FROM groups WHERE `db`=@db", Gib.con);
+            cmdSearch.Parameters.AddWithValue("@db", Gib.curDB);
             reader = cmdSearch.ExecuteReader();
             while (reader.Read())
             {
                 ListViewItem lvItem = new ListViewItem();
+                lvItem.Tag = (int) reader["id"];
                 lvItem.Text = (string) reader["group"];
                 lvGroups.Items.Add(lvItem);
             }
+            if (lvGroups.Items.Count > 0)
+                rmGroup.Enabled = btnAddWord.Enabled = gpStudy.Enabled = gpExams.Enabled = true;
         }
 
         public void refreshWords()
@@ -59,7 +125,8 @@ namespace CW_Study_Tool_4
             SQLiteCommand cmdSearch;
             SQLiteDataReader reader;
 
-            cmdSearch = new SQLiteCommand("SELECT * FROM words", Gib.con);
+            cmdSearch = new SQLiteCommand("SELECT * FROM words WHERE `group`=@groupID", Gib.con);
+            cmdSearch.Parameters.AddWithValue("@group", Gib.curGroup);
             reader = cmdSearch.ExecuteReader();
             while (reader.Read())
             {
@@ -87,14 +154,14 @@ namespace CW_Study_Tool_4
         {
             if (lvGroups.SelectedItems.Count > 0)
             {
-                Gib.curWord = lvGroups.SelectedItems[0].Text;
+                Gib.curGroup = (int) lvGroups.SelectedItems[0].Tag;
                 refreshWords();
-                btnExport.Enabled = btnAddWord.Enabled = true;
+                btnAddWord.Enabled = true;
             }
             else
             {
                 lvWords.Items.Clear();
-                btnExport.Enabled = btnAddWord.Enabled = false;
+                rmGroup.Enabled = btnAddWord.Enabled = gpStudy.Enabled = gpExams.Enabled = false;
             }
         }
 
@@ -106,16 +173,25 @@ namespace CW_Study_Tool_4
 
         public void loadWord()
         {
-            
+            gpOperations.Enabled = true;
         }
 
         private void lvWords_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvGroups.SelectedItems.Count > 0)
+            if (lvWords.SelectedItems.Count > 0)
             {
-                Gib.curWord = lvGroups.SelectedItems[0].Text;
+                Gib.curWord = (int) lvWords.SelectedItems[0].Tag;
                 loadWord();
             }
+            else
+            {
+                gpOperations.Enabled = false;
+            }
+        }
+
+        private void rmGroup_ItemClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

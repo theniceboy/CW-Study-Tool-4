@@ -1,6 +1,6 @@
 ﻿namespace CW_Study_Tool_4
 {
-    partial class FrmAddWord
+    partial class FrmEditWord
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,7 @@
             this.btnAdd.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.btnAdd.SymbolSize = 13F;
             this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = " Add";
+            this.btnAdd.Text = " Done";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tbTrans
@@ -97,8 +97,8 @@
             this.tbTrans.Size = new System.Drawing.Size(1298, 601);
             this.tbTrans.TabIndex = 8;
             this.tbTrans.WatermarkColor = System.Drawing.Color.Gainsboro;
-            this.tbTrans.WatermarkText = "The translation of the new word (optional), press Ctrl+Enter to add a new word, o" +
-    "r just click the \"Add button\"";
+            this.tbTrans.WatermarkText = "The translation of the word (optional), press Ctrl+Enter to add a new word, or ju" +
+    "st click the \"Add button\"";
             this.tbTrans.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmKeyDown);
             // 
             // tbWord
@@ -121,7 +121,7 @@
             this.tbWord.TabIndex = 7;
             this.tbWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbWord.WatermarkColor = System.Drawing.Color.Gainsboro;
-            this.tbWord.WatermarkText = "New Word (Needed)";
+            this.tbWord.WatermarkText = "Word (Needed)";
             this.tbWord.TextChanged += new System.EventHandler(this.tbWord_TextChanged);
             this.tbWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmKeyDown);
             // 
@@ -170,7 +170,7 @@
             this.pnMain.Size = new System.Drawing.Size(1302, 850);
             this.pnMain.TabIndex = 13;
             // 
-            // FrmAddWord
+            // FrmEditWord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -181,9 +181,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(947, 514);
-            this.Name = "FrmAddWord";
+            this.Name = "FrmEditWord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CW Study Tool - Add Words";
+            this.Text = "CW Study Tool - Edit Word";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAddWord_FormClosing);
             this.Load += new System.EventHandler(this.FrmAddWord_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmKeyDown);

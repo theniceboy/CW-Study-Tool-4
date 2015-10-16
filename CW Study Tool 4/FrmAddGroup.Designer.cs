@@ -48,10 +48,10 @@
             this.tbGroup.DisabledBackColor = System.Drawing.Color.White;
             this.tbGroup.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.tbGroup.ForeColor = System.Drawing.Color.Black;
-            this.tbGroup.Location = new System.Drawing.Point(0, 12);
+            this.tbGroup.Location = new System.Drawing.Point(0, 14);
             this.tbGroup.Name = "tbGroup";
             this.tbGroup.PreventEnterBeep = true;
-            this.tbGroup.Size = new System.Drawing.Size(717, 61);
+            this.tbGroup.Size = new System.Drawing.Size(804, 67);
             this.tbGroup.TabIndex = 0;
             this.tbGroup.TextChanged += new System.EventHandler(this.tbGroup_TextChanged);
             this.tbGroup.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbGroup_KeyDown);
@@ -62,9 +62,9 @@
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(490, 79);
+            this.btnAdd.Location = new System.Drawing.Point(551, 89);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(227, 77);
+            this.btnAdd.Size = new System.Drawing.Size(253, 84);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAdd.Symbol = "58826";
             this.btnAdd.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -79,9 +79,9 @@
             this.lbError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lbError.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lbError.ForeColor = System.Drawing.Color.Black;
-            this.lbError.Location = new System.Drawing.Point(12, 92);
+            this.lbError.Location = new System.Drawing.Point(14, 104);
             this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(472, 54);
+            this.lbError.Size = new System.Drawing.Size(531, 61);
             this.lbError.TabIndex = 2;
             // 
             // pnMain
@@ -94,14 +94,14 @@
             this.pnMain.ForeColor = System.Drawing.Color.Black;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(717, 156);
+            this.pnMain.Size = new System.Drawing.Size(807, 176);
             this.pnMain.TabIndex = 3;
             // 
             // FrmAddGroup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(717, 156);
+            this.ClientSize = new System.Drawing.Size(807, 176);
             this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 15F);
