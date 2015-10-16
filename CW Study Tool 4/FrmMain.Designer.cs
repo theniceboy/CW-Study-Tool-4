@@ -33,28 +33,29 @@
             this.pnWords = new System.Windows.Forms.Panel();
             this.btnAddWord = new DevComponents.DotNetBar.ButtonX();
             this.lvWords = new DevComponents.DotNetBar.Controls.ListViewEx();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chWords = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvGroups = new DevComponents.DotNetBar.Controls.ListViewEx();
-            this.cGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddGroup = new DevComponents.DotNetBar.ButtonX();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.dbSelector = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.radialMenu = new DevComponents.DotNetBar.RadialMenu();
+            this.rmGroup = new DevComponents.DotNetBar.RadialMenu();
+            this.riClearStudyRecord = new DevComponents.DotNetBar.RadialMenuItem();
             this.riDelete = new DevComponents.DotNetBar.RadialMenuItem();
-            this.riExport = new DevComponents.DotNetBar.RadialMenuItem();
             this.riRename = new DevComponents.DotNetBar.RadialMenuItem();
+            this.riExport = new DevComponents.DotNetBar.RadialMenuItem();
+            this.dbSelector = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.rmSettings = new DevComponents.DotNetBar.RadialMenu();
             this.pnLearn = new System.Windows.Forms.Panel();
             this.flpControls = new System.Windows.Forms.FlowLayoutPanel();
             this.gpOperations = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.buttonX5 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX6 = new DevComponents.DotNetBar.ButtonX();
+            this.btnDeleteWord = new DevComponents.DotNetBar.ButtonX();
+            this.btnEditWord = new DevComponents.DotNetBar.ButtonX();
             this.gpStudy = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.btnMultiRoundStudy = new DevComponents.DotNetBar.ButtonX();
+            this.btnWalkthough = new DevComponents.DotNetBar.ButtonX();
             this.gpExams = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
-            this.rmGroup = new DevComponents.DotNetBar.RadialMenu();
+            this.btnFullExam = new DevComponents.DotNetBar.ButtonX();
+            this.btnQuickExam = new DevComponents.DotNetBar.ButtonX();
             this.pnWords.SuspendLayout();
             this.pnMain.SuspendLayout();
             this.pnLearn.SuspendLayout();
@@ -76,10 +77,11 @@
             this.pnWords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnWords.Controls.Add(this.btnAddWord);
             this.pnWords.Controls.Add(this.lvWords);
+            this.pnWords.Enabled = false;
             this.pnWords.ForeColor = System.Drawing.Color.Black;
-            this.pnWords.Location = new System.Drawing.Point(384, 3);
+            this.pnWords.Location = new System.Drawing.Point(341, 3);
             this.pnWords.Name = "pnWords";
-            this.pnWords.Size = new System.Drawing.Size(376, 736);
+            this.pnWords.Size = new System.Drawing.Size(334, 654);
             this.pnWords.TabIndex = 10;
             // 
             // btnAddWord
@@ -89,11 +91,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddWord.BackColor = System.Drawing.Color.White;
             this.btnAddWord.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAddWord.Enabled = false;
             this.btnAddWord.FocusCuesEnabled = false;
-            this.btnAddWord.Location = new System.Drawing.Point(0, 7);
+            this.btnAddWord.Location = new System.Drawing.Point(0, 6);
             this.btnAddWord.Name = "btnAddWord";
-            this.btnAddWord.Size = new System.Drawing.Size(376, 56);
+            this.btnAddWord.Size = new System.Drawing.Size(334, 50);
             this.btnAddWord.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddWord.Symbol = "57672";
             this.btnAddWord.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -114,23 +115,24 @@
             this.lvWords.Border.Class = "ListViewBorder";
             this.lvWords.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lvWords.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
+            this.chWords});
             this.lvWords.DisabledBackColor = System.Drawing.Color.Empty;
             this.lvWords.ForeColor = System.Drawing.Color.Black;
             this.lvWords.FullRowSelect = true;
-            this.lvWords.Location = new System.Drawing.Point(0, 70);
+            this.lvWords.Location = new System.Drawing.Point(0, 62);
             this.lvWords.MultiSelect = false;
             this.lvWords.Name = "lvWords";
-            this.lvWords.Size = new System.Drawing.Size(376, 666);
+            this.lvWords.Size = new System.Drawing.Size(334, 592);
+            this.lvWords.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvWords.TabIndex = 5;
             this.lvWords.UseCompatibleStateImageBehavior = false;
             this.lvWords.View = System.Windows.Forms.View.Details;
             this.lvWords.SelectedIndexChanged += new System.EventHandler(this.lvWords_SelectedIndexChanged);
             // 
-            // columnHeader1
+            // chWords
             // 
-            this.columnHeader1.Text = "Words";
-            this.columnHeader1.Width = 326;
+            this.chWords.Text = "Words";
+            this.chWords.Width = 326;
             // 
             // lvGroups
             // 
@@ -143,23 +145,24 @@
             this.lvGroups.Border.Class = "ListViewBorder";
             this.lvGroups.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lvGroups.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.cGroups});
+            this.chGroups});
             this.lvGroups.DisabledBackColor = System.Drawing.Color.Empty;
             this.lvGroups.ForeColor = System.Drawing.Color.Black;
             this.lvGroups.FullRowSelect = true;
-            this.lvGroups.Location = new System.Drawing.Point(1, 73);
+            this.lvGroups.Location = new System.Drawing.Point(1, 65);
             this.lvGroups.MultiSelect = false;
             this.lvGroups.Name = "lvGroups";
-            this.lvGroups.Size = new System.Drawing.Size(376, 666);
+            this.lvGroups.Size = new System.Drawing.Size(334, 592);
+            this.lvGroups.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvGroups.TabIndex = 9;
             this.lvGroups.UseCompatibleStateImageBehavior = false;
             this.lvGroups.View = System.Windows.Forms.View.Details;
             this.lvGroups.SelectedIndexChanged += new System.EventHandler(this.lvGroups_SelectedIndexChanged);
             // 
-            // cGroups
+            // chGroups
             // 
-            this.cGroups.Text = "Groups";
-            this.cGroups.Width = 326;
+            this.chGroups.Text = "Groups";
+            this.chGroups.Width = 326;
             // 
             // btnAddGroup
             // 
@@ -167,9 +170,9 @@
             this.btnAddGroup.BackColor = System.Drawing.Color.White;
             this.btnAddGroup.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAddGroup.FocusCuesEnabled = false;
-            this.btnAddGroup.Location = new System.Drawing.Point(1, 10);
+            this.btnAddGroup.Location = new System.Drawing.Point(1, 9);
             this.btnAddGroup.Name = "btnAddGroup";
-            this.btnAddGroup.Size = new System.Drawing.Size(314, 56);
+            this.btnAddGroup.Size = new System.Drawing.Size(279, 50);
             this.btnAddGroup.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddGroup.Symbol = "58298";
             this.btnAddGroup.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -185,7 +188,7 @@
             this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnMain.Controls.Add(this.rmGroup);
             this.pnMain.Controls.Add(this.dbSelector);
-            this.pnMain.Controls.Add(this.radialMenu);
+            this.pnMain.Controls.Add(this.rmSettings);
             this.pnMain.Controls.Add(this.pnLearn);
             this.pnMain.Controls.Add(this.btnAddGroup);
             this.pnMain.Controls.Add(this.lvGroups);
@@ -194,35 +197,36 @@
             this.pnMain.ForeColor = System.Drawing.Color.Black;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1155, 742);
+            this.pnMain.Size = new System.Drawing.Size(1027, 660);
             this.pnMain.TabIndex = 14;
             // 
-            // dbSelector
+            // rmGroup
             // 
-            this.dbSelector.DisplayMember = "Text";
-            this.dbSelector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.dbSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dbSelector.ForeColor = System.Drawing.Color.Black;
-            this.dbSelector.FormattingEnabled = true;
-            this.dbSelector.ItemHeight = 37;
-            this.dbSelector.Location = new System.Drawing.Point(769, 16);
-            this.dbSelector.Name = "dbSelector";
-            this.dbSelector.Size = new System.Drawing.Size(317, 43);
-            this.dbSelector.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dbSelector.TabIndex = 14;
+            this.rmGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.rmGroup.Enabled = false;
+            this.rmGroup.ForeColor = System.Drawing.Color.Black;
+            this.rmGroup.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.riClearStudyRecord,
+            this.riDelete,
+            this.riRename,
+            this.riExport});
+            this.rmGroup.Location = new System.Drawing.Point(285, 9);
+            this.rmGroup.Name = "rmGroup";
+            this.rmGroup.Size = new System.Drawing.Size(50, 50);
+            this.rmGroup.Symbol = "57377";
+            this.rmGroup.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.rmGroup.SymbolSize = 13F;
+            this.rmGroup.TabIndex = 15;
+            this.rmGroup.ItemClick += new System.EventHandler(this.rmGroup_ItemClick);
             // 
-            // radialMenu
+            // riClearStudyRecord
             // 
-            this.radialMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radialMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.radialMenu.ForeColor = System.Drawing.Color.Black;
-            this.radialMenu.Location = new System.Drawing.Point(1094, 10);
-            this.radialMenu.Name = "radialMenu";
-            this.radialMenu.Size = new System.Drawing.Size(56, 56);
-            this.radialMenu.Symbol = "59576";
-            this.radialMenu.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.radialMenu.SymbolSize = 11F;
-            this.radialMenu.TabIndex = 13;
+            this.riClearStudyRecord.Name = "riClearStudyRecord";
+            this.riClearStudyRecord.Symbol = "58829";
+            this.riClearStudyRecord.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.riClearStudyRecord.Text = "Clear Records";
+            this.riClearStudyRecord.Tooltip = "Empty your study record (your choice \'remember\' or \'forgot\' on each word) in this" +
+    " group";
             // 
             // riDelete
             // 
@@ -233,15 +237,6 @@
             this.riDelete.Tooltip = "Delete the seleted group. Warning: this operation will delete this group <b>and a" +
     "ll the words in this group</b>!";
             // 
-            // riExport
-            // 
-            this.riExport.Name = "riExport";
-            this.riExport.Symbol = "57694";
-            this.riExport.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.riExport.Text = "Export";
-            this.riExport.Tooltip = "Export the selected group into a file that you can give to anyone else so they ca" +
-    "n import into thier CW Study Tool 4 to study the word you exported";
-            // 
             // riRename
             // 
             this.riRename.Name = "riRename";
@@ -249,6 +244,44 @@
             this.riRename.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.riRename.Text = "Rename";
             this.riRename.Tooltip = "Rename your group";
+            // 
+            // riExport
+            // 
+            this.riExport.Name = "riExport";
+            this.riExport.Symbol = "57694";
+            this.riExport.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.riExport.Text = "Export";
+            this.riExport.Tooltip = "Export the selected group into a file that you can give to anyone else and they c" +
+    "an import into thier CW Study Tool 4 to study the word you exported";
+            // 
+            // dbSelector
+            // 
+            this.dbSelector.DisplayMember = "Text";
+            this.dbSelector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.dbSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dbSelector.ForeColor = System.Drawing.Color.Black;
+            this.dbSelector.FormattingEnabled = true;
+            this.dbSelector.ItemHeight = 33;
+            this.dbSelector.Location = new System.Drawing.Point(684, 14);
+            this.dbSelector.Name = "dbSelector";
+            this.dbSelector.Size = new System.Drawing.Size(282, 39);
+            this.dbSelector.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dbSelector.TabIndex = 14;
+            this.dbSelector.SelectedIndexChanged += new System.EventHandler(this.dbSelector_SelectedIndexChanged);
+            // 
+            // rmSettings
+            // 
+            this.rmSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rmSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.rmSettings.ForeColor = System.Drawing.Color.Black;
+            this.rmSettings.Location = new System.Drawing.Point(972, 9);
+            this.rmSettings.Name = "rmSettings";
+            this.rmSettings.Size = new System.Drawing.Size(50, 50);
+            this.rmSettings.Symbol = "59576";
+            this.rmSettings.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.rmSettings.SymbolSize = 11F;
+            this.rmSettings.TabIndex = 13;
+            this.rmSettings.ItemClick += new System.EventHandler(this.rmSettings_ItemClick);
             // 
             // pnLearn
             // 
@@ -258,9 +291,9 @@
             this.pnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnLearn.Controls.Add(this.flpControls);
             this.pnLearn.ForeColor = System.Drawing.Color.Black;
-            this.pnLearn.Location = new System.Drawing.Point(766, 73);
+            this.pnLearn.Location = new System.Drawing.Point(681, 65);
             this.pnLearn.Name = "pnLearn";
-            this.pnLearn.Size = new System.Drawing.Size(386, 666);
+            this.pnLearn.Size = new System.Drawing.Size(343, 592);
             this.pnLearn.TabIndex = 12;
             // 
             // flpControls
@@ -273,7 +306,7 @@
             this.flpControls.ForeColor = System.Drawing.Color.Black;
             this.flpControls.Location = new System.Drawing.Point(0, 0);
             this.flpControls.Name = "flpControls";
-            this.flpControls.Size = new System.Drawing.Size(386, 666);
+            this.flpControls.Size = new System.Drawing.Size(343, 592);
             this.flpControls.TabIndex = 12;
             // 
             // gpOperations
@@ -281,13 +314,13 @@
             this.gpOperations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gpOperations.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gpOperations.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.gpOperations.Controls.Add(this.buttonX5);
-            this.gpOperations.Controls.Add(this.buttonX6);
+            this.gpOperations.Controls.Add(this.btnDeleteWord);
+            this.gpOperations.Controls.Add(this.btnEditWord);
             this.gpOperations.DisabledBackColor = System.Drawing.Color.Empty;
             this.gpOperations.Enabled = false;
             this.gpOperations.Location = new System.Drawing.Point(3, 3);
             this.gpOperations.Name = "gpOperations";
-            this.gpOperations.Size = new System.Drawing.Size(379, 215);
+            this.gpOperations.Size = new System.Drawing.Size(337, 191);
             // 
             // 
             // 
@@ -319,52 +352,54 @@
             this.gpOperations.TabIndex = 11;
             this.gpOperations.Text = "Operations";
             // 
-            // buttonX5
+            // btnDeleteWord
             // 
-            this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnDeleteWord.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDeleteWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.FocusCuesEnabled = false;
-            this.buttonX5.Location = new System.Drawing.Point(3, 91);
-            this.buttonX5.Name = "buttonX5";
-            this.buttonX5.Size = new System.Drawing.Size(366, 76);
-            this.buttonX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX5.Symbol = "58829";
-            this.buttonX5.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.buttonX5.SymbolSize = 15F;
-            this.buttonX5.TabIndex = 8;
-            this.buttonX5.Text = " Delete Word";
+            this.btnDeleteWord.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDeleteWord.FocusCuesEnabled = false;
+            this.btnDeleteWord.Location = new System.Drawing.Point(3, 81);
+            this.btnDeleteWord.Name = "btnDeleteWord";
+            this.btnDeleteWord.Size = new System.Drawing.Size(325, 68);
+            this.btnDeleteWord.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnDeleteWord.Symbol = "58829";
+            this.btnDeleteWord.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnDeleteWord.SymbolSize = 15F;
+            this.btnDeleteWord.TabIndex = 8;
+            this.btnDeleteWord.Text = " Delete Word";
+            this.btnDeleteWord.Click += new System.EventHandler(this.btnDeleteWord_Click);
             // 
-            // buttonX6
+            // btnEditWord
             // 
-            this.buttonX6.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnEditWord.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnEditWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX6.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX6.FocusCuesEnabled = false;
-            this.buttonX6.Location = new System.Drawing.Point(3, 3);
-            this.buttonX6.Name = "buttonX6";
-            this.buttonX6.Size = new System.Drawing.Size(366, 81);
-            this.buttonX6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX6.Symbol = "57940";
-            this.buttonX6.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.buttonX6.SymbolSize = 15F;
-            this.buttonX6.TabIndex = 7;
-            this.buttonX6.Text = " Edit Word";
+            this.btnEditWord.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnEditWord.FocusCuesEnabled = false;
+            this.btnEditWord.Location = new System.Drawing.Point(3, 3);
+            this.btnEditWord.Name = "btnEditWord";
+            this.btnEditWord.Size = new System.Drawing.Size(325, 72);
+            this.btnEditWord.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnEditWord.Symbol = "57940";
+            this.btnEditWord.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnEditWord.SymbolSize = 15F;
+            this.btnEditWord.TabIndex = 7;
+            this.btnEditWord.Text = " Edit Word";
+            this.btnEditWord.Click += new System.EventHandler(this.btnEditWord_Click);
             // 
             // gpStudy
             // 
             this.gpStudy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gpStudy.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gpStudy.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.gpStudy.Controls.Add(this.buttonX2);
-            this.gpStudy.Controls.Add(this.buttonX1);
+            this.gpStudy.Controls.Add(this.btnMultiRoundStudy);
+            this.gpStudy.Controls.Add(this.btnWalkthough);
             this.gpStudy.DisabledBackColor = System.Drawing.Color.Empty;
             this.gpStudy.Enabled = false;
-            this.gpStudy.Location = new System.Drawing.Point(3, 224);
+            this.gpStudy.Location = new System.Drawing.Point(3, 200);
             this.gpStudy.Name = "gpStudy";
-            this.gpStudy.Size = new System.Drawing.Size(379, 215);
+            this.gpStudy.Size = new System.Drawing.Size(337, 191);
             // 
             // 
             // 
@@ -396,52 +431,54 @@
             this.gpStudy.TabIndex = 9;
             this.gpStudy.Text = "Study";
             // 
-            // buttonX2
+            // btnMultiRoundStudy
             // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnMultiRoundStudy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnMultiRoundStudy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.FocusCuesEnabled = false;
-            this.buttonX2.Location = new System.Drawing.Point(3, 91);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(366, 76);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.Symbol = "58837";
-            this.buttonX2.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.buttonX2.SymbolSize = 15F;
-            this.buttonX2.TabIndex = 8;
-            this.buttonX2.Text = " Multi-Round Study";
+            this.btnMultiRoundStudy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnMultiRoundStudy.FocusCuesEnabled = false;
+            this.btnMultiRoundStudy.Location = new System.Drawing.Point(3, 81);
+            this.btnMultiRoundStudy.Name = "btnMultiRoundStudy";
+            this.btnMultiRoundStudy.Size = new System.Drawing.Size(325, 68);
+            this.btnMultiRoundStudy.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnMultiRoundStudy.Symbol = "58837";
+            this.btnMultiRoundStudy.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnMultiRoundStudy.SymbolSize = 15F;
+            this.btnMultiRoundStudy.TabIndex = 8;
+            this.btnMultiRoundStudy.Text = " Multi-Round Study";
+            this.btnMultiRoundStudy.Click += new System.EventHandler(this.btnMultiRoundStudy_Click);
             // 
-            // buttonX1
+            // btnWalkthough
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnWalkthough.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnWalkthough.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.FocusCuesEnabled = false;
-            this.buttonX1.Location = new System.Drawing.Point(3, 3);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(366, 81);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.Symbol = "57399";
-            this.buttonX1.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.buttonX1.SymbolSize = 15F;
-            this.buttonX1.TabIndex = 7;
-            this.buttonX1.Text = " Walkthough";
+            this.btnWalkthough.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnWalkthough.FocusCuesEnabled = false;
+            this.btnWalkthough.Location = new System.Drawing.Point(3, 3);
+            this.btnWalkthough.Name = "btnWalkthough";
+            this.btnWalkthough.Size = new System.Drawing.Size(325, 72);
+            this.btnWalkthough.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnWalkthough.Symbol = "57399";
+            this.btnWalkthough.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnWalkthough.SymbolSize = 15F;
+            this.btnWalkthough.TabIndex = 7;
+            this.btnWalkthough.Text = " Walkthough";
+            this.btnWalkthough.Click += new System.EventHandler(this.btnWalkthough_Click);
             // 
             // gpExams
             // 
             this.gpExams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gpExams.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gpExams.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.gpExams.Controls.Add(this.buttonX3);
-            this.gpExams.Controls.Add(this.buttonX4);
+            this.gpExams.Controls.Add(this.btnFullExam);
+            this.gpExams.Controls.Add(this.btnQuickExam);
             this.gpExams.DisabledBackColor = System.Drawing.Color.Empty;
             this.gpExams.Enabled = false;
-            this.gpExams.Location = new System.Drawing.Point(3, 445);
+            this.gpExams.Location = new System.Drawing.Point(3, 397);
             this.gpExams.Name = "gpExams";
-            this.gpExams.Size = new System.Drawing.Size(379, 215);
+            this.gpExams.Size = new System.Drawing.Size(337, 191);
             // 
             // 
             // 
@@ -473,62 +510,47 @@
             this.gpExams.TabIndex = 10;
             this.gpExams.Text = "Exams";
             // 
-            // buttonX3
+            // btnFullExam
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnFullExam.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnFullExam.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.FocusCuesEnabled = false;
-            this.buttonX3.Location = new System.Drawing.Point(3, 91);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(366, 76);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX3.Symbol = "59511";
-            this.buttonX3.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.buttonX3.SymbolSize = 15F;
-            this.buttonX3.TabIndex = 8;
-            this.buttonX3.Text = " Full Exam";
+            this.btnFullExam.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnFullExam.FocusCuesEnabled = false;
+            this.btnFullExam.Location = new System.Drawing.Point(3, 81);
+            this.btnFullExam.Name = "btnFullExam";
+            this.btnFullExam.Size = new System.Drawing.Size(325, 68);
+            this.btnFullExam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnFullExam.Symbol = "59511";
+            this.btnFullExam.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnFullExam.SymbolSize = 15F;
+            this.btnFullExam.TabIndex = 8;
+            this.btnFullExam.Text = " Full Exam";
+            this.btnFullExam.Click += new System.EventHandler(this.btnFullExam_Click);
             // 
-            // buttonX4
+            // btnQuickExam
             // 
-            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnQuickExam.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnQuickExam.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX4.FocusCuesEnabled = false;
-            this.buttonX4.Location = new System.Drawing.Point(3, 3);
-            this.buttonX4.Name = "buttonX4";
-            this.buttonX4.Size = new System.Drawing.Size(366, 81);
-            this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX4.Symbol = "59510";
-            this.buttonX4.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.buttonX4.SymbolSize = 15F;
-            this.buttonX4.TabIndex = 7;
-            this.buttonX4.Text = " Quick Exam";
-            // 
-            // rmGroup
-            // 
-            this.rmGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.rmGroup.ForeColor = System.Drawing.Color.Black;
-            this.rmGroup.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.riDelete,
-            this.riRename,
-            this.riExport});
-            this.rmGroup.Location = new System.Drawing.Point(321, 10);
-            this.rmGroup.Name = "rmGroup";
-            this.rmGroup.Size = new System.Drawing.Size(56, 56);
-            this.rmGroup.Symbol = "57377";
-            this.rmGroup.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.rmGroup.SymbolSize = 13F;
-            this.rmGroup.TabIndex = 15;
-            this.rmGroup.ItemClick += new System.EventHandler(this.rmGroup_ItemClick);
+            this.btnQuickExam.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnQuickExam.FocusCuesEnabled = false;
+            this.btnQuickExam.Location = new System.Drawing.Point(3, 3);
+            this.btnQuickExam.Name = "btnQuickExam";
+            this.btnQuickExam.Size = new System.Drawing.Size(325, 72);
+            this.btnQuickExam.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnQuickExam.Symbol = "59510";
+            this.btnQuickExam.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnQuickExam.SymbolSize = 15F;
+            this.btnQuickExam.TabIndex = 7;
+            this.btnQuickExam.Text = " Quick Exam";
+            this.btnQuickExam.Click += new System.EventHandler(this.btnQuickExam_Click);
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1155, 742);
+            this.ClientSize = new System.Drawing.Size(1027, 660);
             this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -553,28 +575,29 @@
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private System.Windows.Forms.Panel pnWords;
         private DevComponents.DotNetBar.Controls.ListViewEx lvWords;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader chWords;
         private DevComponents.DotNetBar.Controls.ListViewEx lvGroups;
-        private System.Windows.Forms.ColumnHeader cGroups;
+        private System.Windows.Forms.ColumnHeader chGroups;
         private DevComponents.DotNetBar.ButtonX btnAddGroup;
         private DevComponents.DotNetBar.ButtonX btnAddWord;
         private System.Windows.Forms.Panel pnMain;
         private System.Windows.Forms.Panel pnLearn;
-        private DevComponents.DotNetBar.RadialMenu radialMenu;
+        private DevComponents.DotNetBar.RadialMenu rmSettings;
         private DevComponents.DotNetBar.RadialMenuItem riDelete;
         private DevComponents.DotNetBar.RadialMenuItem riExport;
         private DevComponents.DotNetBar.RadialMenuItem riRename;
         private System.Windows.Forms.FlowLayoutPanel flpControls;
         private DevComponents.DotNetBar.Controls.GroupPanel gpOperations;
-        private DevComponents.DotNetBar.ButtonX buttonX5;
-        private DevComponents.DotNetBar.ButtonX buttonX6;
+        private DevComponents.DotNetBar.ButtonX btnDeleteWord;
+        private DevComponents.DotNetBar.ButtonX btnEditWord;
         private DevComponents.DotNetBar.Controls.GroupPanel gpStudy;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX btnMultiRoundStudy;
+        private DevComponents.DotNetBar.ButtonX btnWalkthough;
         private DevComponents.DotNetBar.Controls.GroupPanel gpExams;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
+        private DevComponents.DotNetBar.ButtonX btnFullExam;
+        private DevComponents.DotNetBar.ButtonX btnQuickExam;
         private DevComponents.DotNetBar.Controls.ComboBoxEx dbSelector;
         private DevComponents.DotNetBar.RadialMenu rmGroup;
+        private DevComponents.DotNetBar.RadialMenuItem riClearStudyRecord;
     }
 }

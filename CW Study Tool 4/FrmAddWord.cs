@@ -19,7 +19,7 @@ namespace CW_Study_Tool_4
         private string word = "";
 
         private string strSQLInsert =
-            "INSERT INTO words (word, trans, groupName, state, gamestate) VALUES (@word, @trans, @group, @state, @gamestate)";
+            "INSERT INTO words (`word`, `trans`, `group`, `state`, `gamestate`) VALUES (@word, @trans, @group, @state, @gamestate)";
 
         public FrmAddWord()
         {
@@ -86,6 +86,8 @@ namespace CW_Study_Tool_4
             {
                 btnAdd_Click(sender, e);
             }
+            if (e.Control && e.KeyCode == Keys.A)
+                try { ((TextBoxX)sender).SelectAll(); } catch { }
         }
 
         private void FrmAddWord_FormClosing(object sender, FormClosingEventArgs e)

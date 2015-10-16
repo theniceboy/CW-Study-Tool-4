@@ -19,7 +19,7 @@ namespace CW_Study_Tool_4
         private string word = "";
 
         private string strSQLInsert =
-            "UPDATE words SET word=@word, trans=@trans, group=@group WHERE id=@id";
+            "UPDATE words SET `word`=@word, `trans`=@trans, `group`=@group WHERE `id`=@id";
 
         public FrmEditWord()
         {
@@ -37,7 +37,7 @@ namespace CW_Study_Tool_4
             cmdAddWord.Parameters.AddWithValue("@word", word);
             cmdAddWord.Parameters.AddWithValue("@trans", tbTrans.Text);
             cmdAddWord.Parameters.AddWithValue("@group", Gib.curGroup);
-            cmdAddWord.Parameters.AddWithValue("@id", 0);
+            cmdAddWord.Parameters.AddWithValue("@id", Gib.curWord);
             cmdAddWord.ExecuteNonQuery();
             this.Close();
         }
@@ -63,9 +63,10 @@ namespace CW_Study_Tool_4
                 btnAdd.Enabled = false;
                 return;
             }
-            cmdSearch = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group AND `word`=@word", Gib.con);
+            cmdSearch = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group AND `word`=@word AND `id`<>@id", Gib.con);
             cmdSearch.Parameters.AddWithValue("@group", Gib.curGroup);
             cmdSearch.Parameters.AddWithValue("@word", word);
+            cmdSearch.Parameters.AddWithValue("@id", Gib.curWord);
             reader = cmdSearch.ExecuteReader();
             if (reader.HasRows)
             {
@@ -85,6 +86,8 @@ namespace CW_Study_Tool_4
             {
                 btnAdd_Click(sender, e);
             }
+            if (e.Control && e.KeyCode == Keys.A)
+                try { ((TextBoxX)sender).SelectAll(); } catch { }
         }
 
         private void FrmAddWord_FormClosing(object sender, FormClosingEventArgs e)
@@ -93,10 +96,29 @@ namespace CW_Study_Tool_4
             frm.refreshWords();
         }
 
+        void initInterface()
+        {
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM words WHERE `id`=@id", Gib.con);
+            cmd.Parameters.AddWithValue("@id", Gib.curWord);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                reader.Read();
+                tbWord.Text = reader["word"].ToString();
+                tbTrans.Text = reader["trans"].ToString();
+            }
+            else
+            {
+                MessageBoxEx.Show(this, "The word not exists");
+                this.Close();
+            }
+        }
+
         private void FrmAddWord_Load(object sender, EventArgs e)
         {
             pnMain.BackColor = Color.White;
             lbError.ForeColor = Color.DarkRed;
+            initInterface();
         }
     }
 }

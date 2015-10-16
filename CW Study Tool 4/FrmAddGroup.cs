@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using DevComponents.DotNetBar.Controls;
 
 namespace CW_Study_Tool_4
 {
@@ -69,6 +70,8 @@ namespace CW_Study_Tool_4
             {
                 btnAdd_Click(sender, e);
             }
+            if (e.Control && e.KeyCode == Keys.A)
+                try { ((TextBoxX)sender).SelectAll(); } catch { }
         }
     }
 }

@@ -110,12 +110,14 @@ namespace CW_Study_Tool_4
             while (reader.Read())
             {
                 ListViewItem lvItem = new ListViewItem();
-                lvItem.Tag = (int) reader["id"];
-                lvItem.Text = (string) reader["group"];
+                lvItem.Tag = Convert.ToInt32(reader["id"]);
+                lvItem.Text = reader["group"].ToString();
                 lvGroups.Items.Add(lvItem);
             }
             if (lvGroups.Items.Count > 0)
-                rmGroup.Enabled = btnAddWord.Enabled = gpStudy.Enabled = gpExams.Enabled = true;
+                rmGroup.Enabled = true;
+
+            chGroups.Text = lvGroups.Items.Count.ToString() + " Groups";
         }
 
         public void refreshWords()
@@ -125,15 +127,19 @@ namespace CW_Study_Tool_4
             SQLiteCommand cmdSearch;
             SQLiteDataReader reader;
 
-            cmdSearch = new SQLiteCommand("SELECT * FROM words WHERE `group`=@groupID", Gib.con);
+            cmdSearch = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group", Gib.con);
             cmdSearch.Parameters.AddWithValue("@group", Gib.curGroup);
             reader = cmdSearch.ExecuteReader();
             while (reader.Read())
             {
                 ListViewItem lvItem = new ListViewItem();
-                lvItem.Text = (string)reader["word"];
+                lvItem.Tag = Convert.ToInt32(reader["id"]);
+                lvItem.Text = reader["word"].ToString();
                 lvWords.Items.Add(lvItem);
             }
+
+            chWords.Text = lvWords.Items.Count.ToString() + " Words";
+            gpStudy.Enabled = gpExams.Enabled = (lvWords.Items.Count > 0);
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -156,12 +162,12 @@ namespace CW_Study_Tool_4
             {
                 Gib.curGroup = (int) lvGroups.SelectedItems[0].Tag;
                 refreshWords();
-                btnAddWord.Enabled = true;
+                rmGroup.Enabled = pnWords.Enabled = true;
             }
             else
             {
                 lvWords.Items.Clear();
-                rmGroup.Enabled = btnAddWord.Enabled = gpStudy.Enabled = gpExams.Enabled = false;
+                rmGroup.Enabled = pnWords.Enabled = gpStudy.Enabled = gpExams.Enabled = false;
             }
         }
 
@@ -171,17 +177,12 @@ namespace CW_Study_Tool_4
             frm.ShowDialog(this);
         }
 
-        public void loadWord()
-        {
-            gpOperations.Enabled = true;
-        }
-
         private void lvWords_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvWords.SelectedItems.Count > 0)
             {
                 Gib.curWord = (int) lvWords.SelectedItems[0].Tag;
-                loadWord();
+                gpOperations.Enabled = true;
             }
             else
             {
@@ -190,6 +191,58 @@ namespace CW_Study_Tool_4
         }
 
         private void rmGroup_ItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditWord_Click(object sender, EventArgs e)
+        {
+            FrmEditWord frm = new FrmEditWord();
+            frm.ShowDialog(this);
+        }
+
+        private void btnDeleteWord_Click(object sender, EventArgs e)
+        {
+            if (
+                MessageBox.Show(this, "Are you sure you want to delete this word? You cannot undu this operation",
+                    "CW Study Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) ==
+                DialogResult.Yes)
+            {
+                SQLiteCommand cmdDelete = new SQLiteCommand("DELETE FROM words WHERE `id`=@id", Gib.con);
+                cmdDelete.Parameters.AddWithValue("@id", Gib.curWord);
+                cmdDelete.ExecuteNonQuery();
+                refreshWords();
+            }
+        }
+
+        private void btnWalkthough_Click(object sender, EventArgs e)
+        {
+            Gib.studymode = 0;
+            FrmStudy frm = new FrmStudy();
+            frm.ShowDialog(this);
+        }
+
+        private void btnMultiRoundStudy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuickExam_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFullExam_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dbSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rmSettings_ItemClick(object sender, EventArgs e)
         {
 
         }

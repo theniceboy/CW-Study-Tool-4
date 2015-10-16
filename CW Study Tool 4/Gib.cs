@@ -12,7 +12,16 @@ namespace CW_Study_Tool_4
         public static SQLiteConnection con = null;
 
         public static int curDB = 0, curGroup = 0, curWord = 0;
-        
+        public static int curStudyMode = 0;
+        /* 0: walkthough
+           1: multi-round */
+
+        public struct Word
+        {
+            public string word, trans;
+            public int id, group, state, gamestate;
+        };
+                   
         // OLD
         public static string frmlearntext;
 
