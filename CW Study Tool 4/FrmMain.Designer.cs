@@ -74,7 +74,7 @@
             // 
             this.pnWords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnWords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnWords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnWords.Controls.Add(this.btnAddWord);
             this.pnWords.Controls.Add(this.lvWords);
             this.pnWords.Enabled = false;
@@ -123,6 +123,7 @@
             this.lvWords.Location = new System.Drawing.Point(0, 70);
             this.lvWords.MultiSelect = false;
             this.lvWords.Name = "lvWords";
+            this.lvWords.ShowItemToolTips = true;
             this.lvWords.Size = new System.Drawing.Size(376, 666);
             this.lvWords.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvWords.TabIndex = 5;
@@ -290,7 +291,7 @@
             this.pnLearn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnLearn.Controls.Add(this.flpControls);
             this.pnLearn.ForeColor = System.Drawing.Color.Black;
             this.pnLearn.Location = new System.Drawing.Point(766, 73);
@@ -301,7 +302,7 @@
             // 
             // flpControls
             // 
-            this.flpControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.flpControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.flpControls.Controls.Add(this.gpOperations);
             this.flpControls.Controls.Add(this.gpStudy);
             this.flpControls.Controls.Add(this.gpExams);

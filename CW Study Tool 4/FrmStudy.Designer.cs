@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudy));
             this.btnReplay = new DevComponents.DotNetBar.ButtonX();
-            this.Setting = new DevComponents.DotNetBar.ButtonX();
+            this.btnWordList = new DevComponents.DotNetBar.ButtonX();
             this.ShowTraslation = new DevComponents.DotNetBar.ButtonX();
             this.btnBad = new DevComponents.DotNetBar.ButtonX();
             this.btnGood = new DevComponents.DotNetBar.ButtonX();
@@ -63,18 +63,19 @@
             this.btnReplay.TextColor = System.Drawing.Color.Black;
             this.btnReplay.Click += new System.EventHandler(this.btnReplay_Click);
             // 
-            // Setting
+            // btnWordList
             // 
-            this.Setting.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            resources.ApplyResources(this.Setting, "Setting");
-            this.Setting.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.Setting.FocusCuesEnabled = false;
-            this.Setting.Name = "Setting";
-            this.Setting.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.Setting.Symbol = "57921";
-            this.Setting.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.Setting.SymbolSize = 12F;
-            this.Setting.TextColor = System.Drawing.Color.Black;
+            this.btnWordList.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            resources.ApplyResources(this.btnWordList, "btnWordList");
+            this.btnWordList.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnWordList.FocusCuesEnabled = false;
+            this.btnWordList.Name = "btnWordList";
+            this.btnWordList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnWordList.Symbol = "57921";
+            this.btnWordList.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnWordList.SymbolSize = 12F;
+            this.btnWordList.TextColor = System.Drawing.Color.Black;
+            this.btnWordList.Click += new System.EventHandler(this.btnWordList_Click);
             // 
             // ShowTraslation
             // 
@@ -179,13 +180,13 @@
             // 
             // pnMain
             // 
-            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnMain.Controls.Add(this.label1);
             this.pnMain.Controls.Add(this.sbUseShortcut);
             this.pnMain.Controls.Add(this.Player);
             this.pnMain.Controls.Add(this.buttonX1);
             this.pnMain.Controls.Add(this.btnReplay);
-            this.pnMain.Controls.Add(this.Setting);
+            this.pnMain.Controls.Add(this.btnWordList);
             this.pnMain.Controls.Add(this.ShowTraslation);
             this.pnMain.Controls.Add(this.btnNext);
             this.pnMain.Controls.Add(this.btnBad);
@@ -196,19 +197,24 @@
             resources.ApplyResources(this.pnMain, "pnMain");
             this.pnMain.ForeColor = System.Drawing.Color.Black;
             this.pnMain.Name = "pnMain";
+            this.pnMain.BackColorChanged += new System.EventHandler(this.pnMain_BackColorChanged);
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Name = "label1";
             // 
             // sbUseShortcut
             // 
             resources.ApplyResources(this.sbUseShortcut, "sbUseShortcut");
+            this.sbUseShortcut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
             this.sbUseShortcut.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.sbUseShortcut.ForeColor = System.Drawing.Color.Black;
             this.sbUseShortcut.Name = "sbUseShortcut";
             this.sbUseShortcut.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.sbUseShortcut.Value = true;
@@ -216,7 +222,9 @@
             // 
             // Player
             // 
+            this.Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             resources.ApplyResources(this.Player, "Player");
+            this.Player.ForeColor = System.Drawing.Color.Black;
             this.Player.Name = "Player";
             this.Player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Player.OcxState")));
             // 
@@ -254,7 +262,7 @@
         #endregion
 
         private DevComponents.DotNetBar.ButtonX btnReplay;
-        private DevComponents.DotNetBar.ButtonX Setting;
+        private DevComponents.DotNetBar.ButtonX btnWordList;
         private DevComponents.DotNetBar.ButtonX ShowTraslation;
         private DevComponents.DotNetBar.ButtonX btnBad;
         private DevComponents.DotNetBar.ButtonX btnGood;

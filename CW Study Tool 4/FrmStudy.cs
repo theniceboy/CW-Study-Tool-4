@@ -254,6 +254,17 @@ namespace CW_Study_Tool_4
             FrmMain frm = (FrmMain) this.Owner;
             frm.refreshWords();
         }
+        
+        private void pnMain_BackColorChanged(object sender, EventArgs e)
+        {
+            pnMain.BackColor = Color.White;
+        }
+
+        private void btnWordList_Click(object sender, EventArgs e)
+        {
+            FrmWordList frm = new FrmWordList();
+            frm.ShowDialog(this);
+        }
 
         private void frmKeyDown(object sender, KeyEventArgs e)
         {

@@ -126,6 +126,12 @@
     <Compile Include="FrmStudy.Designer.cs">
       <DependentUpon>FrmStudy.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmWordList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWordList.Designer.cs">
+      <DependentUpon>FrmWordList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gib.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStudy.resx">
       <DependentUpon>FrmStudy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWordList.resx">
+      <DependentUpon>FrmWordList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

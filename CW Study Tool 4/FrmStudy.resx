@@ -153,37 +153,37 @@
   <data name="&gt;&gt;btnReplay.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="Setting.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="btnWordList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="Setting.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnWordList.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
-  <data name="Setting.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnWordList.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 814</value>
   </data>
-  <data name="Setting.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnWordList.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 79</value>
   </data>
-  <data name="Setting.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnWordList.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="Setting.Text" xml:space="preserve">
+  <data name="btnWordList.Text" xml:space="preserve">
     <value> Word List</value>
   </data>
-  <data name="Setting.Tooltip" xml:space="preserve">
+  <data name="btnWordList.Tooltip" xml:space="preserve">
     <value>Show all the words that you're now currently learning</value>
   </data>
-  <data name="&gt;&gt;Setting.Name" xml:space="preserve">
-    <value>Setting</value>
+  <data name="&gt;&gt;btnWordList.Name" xml:space="preserve">
+    <value>btnWordList</value>
   </data>
-  <data name="&gt;&gt;Setting.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnWordList.Type" xml:space="preserve">
     <value>DevComponents.DotNetBar.ButtonX, DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b</value>
   </data>
-  <data name="&gt;&gt;Setting.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnWordList.Parent" xml:space="preserve">
     <value>pnMain</value>
   </data>
-  <data name="&gt;&gt;Setting.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnWordList.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="ShowTraslation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
