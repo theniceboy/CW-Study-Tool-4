@@ -36,6 +36,8 @@ namespace CW_Study_Tool_4
                 else
                     btnBad.Checked = btnGood.Checked = false;
             }
+            else
+                btnBad.Checked = btnGood.Checked = false;
         }
 
         private void FrmWordList_Load(object sender, EventArgs e)
