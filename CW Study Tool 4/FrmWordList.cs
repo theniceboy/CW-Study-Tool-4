@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
@@ -22,29 +23,25 @@ namespace CW_Study_Tool_4
             if (lvWords.SelectedItems.Count > 0)
             {
                 ListViewItem item = lvWords.SelectedItems[0];
-                int id = Convert.ToInt32(item.Tag);
-                int state = 0;
-                if (item.ForeColor == Color.Green)
+                if (item.ForeColor == Color.DarkRed)
                 {
-                    item.ForeColor = Color.DarkRed;
-                    SQLiteCommand cmd = new SQLiteCommand("UPDATE words SET `state`=@state WHERE `id`=@id", Gib.con);
-                    cmd.Parameters.AddWithValue("@state", 2);
-                    cmd.Parameters.AddWithValue("@id", id);
-                    cmd.ExecuteNonQuery();
+                    btnBad.Checked = true;
+                    btnGood.Checked = false;
                 }
-                else if (item.ForeColor == Color.DarkRed)
+                else if (item.ForeColor == Color.Green)
                 {
-                    item.ForeColor = Color.Green;
-                    SQLiteCommand cmd = new SQLiteCommand("UPDATE words SET `state`=@state WHERE `id`=@id", Gib.con);
-                    cmd.Parameters.AddWithValue("@state", 1);
-                    cmd.Parameters.AddWithValue("@id", id);
-                    cmd.ExecuteNonQuery();
+                    btnBad.Checked = false;
+                    btnGood.Checked = true;
                 }
+                else
+                    btnBad.Checked = btnGood.Checked = false;
             }
         }
 
         private void FrmWordList_Load(object sender, EventArgs e)
         {
+            pnMain.BackColor = Color.White;
+
             SQLiteCommand cmdSearch;
             SQLiteDataReader reader;
             int tmp;
@@ -62,8 +59,40 @@ namespace CW_Study_Tool_4
                 lvItem.ForeColor = (tmp == 0 ? Color.Black : (tmp == 1 ? Color.Green : Color.DarkRed));
                 lvWords.Items.Add(lvItem);
             }
+        }
 
-            //.Text = lvWords.Items.Count.ToString() + " Words";
+        private void btnBad_Click(object sender, EventArgs e)
+        {
+            if (lvWords.SelectedItems.Count > 0)
+            {
+                ListViewItem item = lvWords.SelectedItems[0];
+                if (item.ForeColor == Color.DarkRed)
+                {
+                    int id = Convert.ToInt32(item.Tag);
+                    item.ForeColor = Color.DarkRed;
+                    SQLiteCommand cmd = new SQLiteCommand("UPDATE words SET `state`=@state WHERE `id`=@id", Gib.con);
+                    cmd.Parameters.AddWithValue("@state", 2);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void btnGood_Click(object sender, EventArgs e)
+        {
+            if (lvWords.SelectedItems.Count > 0)
+            {
+                ListViewItem item = lvWords.SelectedItems[0];
+                if (item.ForeColor == Color.Green)
+                {
+                    int id = Convert.ToInt32(item.Tag);
+                    item.ForeColor = Color.Green;
+                    SQLiteCommand cmd = new SQLiteCommand("UPDATE words SET `state`=@state WHERE `id`=@id", Gib.con);
+                    cmd.Parameters.AddWithValue("@state", 1);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

@@ -32,9 +32,10 @@ namespace CW_Study_Tool_4
 
         private void FrmStudy_Load(object sender, EventArgs e)
         {
+            spr.Volume = 100;
             pnMain.BackColor = Color.White;
 
-            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group", Gib.con); // ORDER BY `word`
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group ORDER BY `word`", Gib.con); // ORDER BY `word`
             cmd.Parameters.AddWithValue("@group", Gib.curGroup);
             SQLiteDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -52,6 +53,7 @@ namespace CW_Study_Tool_4
             {
                 --js;
                 btnNext_Click(sender, e);
+                MessageBox.Show(cur.ToString());
             }
             refreshGoodBadCount();
 
@@ -119,19 +121,20 @@ namespace CW_Study_Tool_4
                 btnPrevious.Enabled = false;
                 willFinish = true;
                 for (int i = cur - 1; i >= 0; --i)
-                    if (words[i].state == 2)
+                {
+                    if (words[i].state != 1)
                     {
                         btnPrevious.Enabled = true;
                         break;
                     }
+                }
                 for (int i = cur + 1; i < words.Count; ++i)
-                    if (words[i].state == 2)
+                    if (words[i].state != 1)
                     {
                         willFinish = false;
                         break;
                     }
             }
-            btnNext.Enabled = (btnGood.Checked || btnBad.Checked);
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -153,6 +156,12 @@ namespace CW_Study_Tool_4
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            if (!btnGood.Checked && !btnBad.Checked)
+            {
+                ToastNotification.Show(this, "You must choose between \"Remember\" and \"Forgot\" to continue", null,
+                    2000, eToastGlowColor.Blue, eToastPosition.TopCenter);
+                return;
+            }
             if (!btnNext.Enabled)
                 return;
             ++js;
@@ -192,7 +201,7 @@ namespace CW_Study_Tool_4
                 ++cur;
             else
                 for (int i = cur + 1; i < words.Count; ++i)
-                    if (words[i].state == 2)
+                    if (words[i].state != 1)
                     {
                         cur = i;
                         break;
