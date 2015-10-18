@@ -96,6 +96,18 @@
     <Compile Include="FrmAddGroup.Designer.cs">
       <DependentUpon>FrmAddGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddWord_Batch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddWord_Batch.Designer.cs">
+      <DependentUpon>FrmAddWord_Batch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDownload_Dict.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDownload_Dict.Designer.cs">
+      <DependentUpon>FrmDownload_Dict.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEditWord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +149,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAddGroup.resx">
       <DependentUpon>FrmAddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddWord_Batch.resx">
+      <DependentUpon>FrmAddWord_Batch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDownload_Dict.resx">
+      <DependentUpon>FrmDownload_Dict.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEditWord.resx">
       <DependentUpon>FrmEditWord.cs</DependentUpon>

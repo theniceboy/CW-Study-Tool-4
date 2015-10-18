@@ -57,6 +57,7 @@
             this.gpExams = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnFullExam = new DevComponents.DotNetBar.ButtonX();
             this.btnQuickExam = new DevComponents.DotNetBar.ButtonX();
+            this.btnBatch = new DevComponents.DotNetBar.ButtonX();
             this.pnWords.SuspendLayout();
             this.pnMain.SuspendLayout();
             this.pnLearn.SuspendLayout();
@@ -76,6 +77,7 @@
             this.pnWords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnWords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.pnWords.Controls.Add(this.btnBatch);
             this.pnWords.Controls.Add(this.btnAddWord);
             this.pnWords.Controls.Add(this.lvWords);
             this.pnWords.Enabled = false;
@@ -96,7 +98,7 @@
             this.btnAddWord.FocusCuesEnabled = false;
             this.btnAddWord.Location = new System.Drawing.Point(0, 7);
             this.btnAddWord.Name = "btnAddWord";
-            this.btnAddWord.Size = new System.Drawing.Size(376, 56);
+            this.btnAddWord.Size = new System.Drawing.Size(185, 56);
             this.btnAddWord.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddWord.Symbol = "57672";
             this.btnAddWord.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -572,6 +574,25 @@
             this.btnQuickExam.Text = " Quick Exam";
             this.btnQuickExam.Click += new System.EventHandler(this.btnQuickExam_Click);
             // 
+            // btnBatch
+            // 
+            this.btnBatch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBatch.BackColor = System.Drawing.Color.White;
+            this.btnBatch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBatch.FocusCuesEnabled = false;
+            this.btnBatch.Location = new System.Drawing.Point(191, 7);
+            this.btnBatch.Name = "btnBatch";
+            this.btnBatch.Size = new System.Drawing.Size(185, 56);
+            this.btnBatch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBatch.Symbol = "57672";
+            this.btnBatch.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnBatch.SymbolSize = 12F;
+            this.btnBatch.TabIndex = 7;
+            this.btnBatch.Text = " Batch";
+            this.btnBatch.Click += new System.EventHandler(this.btnBatch_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
@@ -626,5 +647,6 @@
         private DevComponents.DotNetBar.RadialMenuItem riDelete;
         private DevComponents.DotNetBar.RadialMenuItem riRename;
         private DevComponents.DotNetBar.RadialMenuItem riExport;
+        private DevComponents.DotNetBar.ButtonX btnBatch;
     }
 }

@@ -27,12 +27,9 @@ namespace CW_Study_Tool_4 {
         private Thread tsp;
         private SpeechSynthesizer spr = new SpeechSynthesizer();
 
-        private void FrmStudy_Load(object sender, EventArgs e) {
-            spr.Volume = 100;
-            pnMain.BackColor = Color.White;
-
+        public void getWordList() {
             SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group ORDER BY `word`", Gib.con);
-                // ORDER BY `word`
+            // ORDER BY `word`
             cmd.Parameters.AddWithValue("@group", Gib.curGroup);
             SQLiteDataReader reader = cmd.ExecuteReader();
             while (reader.Read()) {
@@ -43,6 +40,12 @@ namespace CW_Study_Tool_4 {
                 item.state = Convert.ToInt32(reader["state"]);
                 words.Add(item);
             }
+        }
+
+        private void FrmStudy_Load(object sender, EventArgs e) {
+            spr.Volume = 100;
+            pnMain.BackColor = Color.White;
+            getWordList();
             refreshState();
             wordCountThisRound = words.Count - goodCount(true);
             if (Gib.studymode == 1 && words[cur].state == 1) {
@@ -89,7 +92,7 @@ namespace CW_Study_Tool_4 {
             return count;
         }
 
-        private void refreshState(bool doReplay = true) {
+        public void refreshState(bool doReplay = true) {
             if (Gib.studymode == 0)
                 this.Text = originTitle + " ( " + (cur + 1) + " / " + words.Count + " )";
             else

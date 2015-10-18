@@ -36,7 +36,7 @@ namespace CW_Study_Tool_4 {
                 }
 
 
-            Gib.con = new SQLiteConnection("Data Source =" + Gib.dbpath);
+            Gib.con = new SQLiteConnection("Data Source =" + Gib.`dbpath);
             Gib.con.Open();
 
             SQLiteCommand cmdCreateTable =
@@ -158,6 +158,7 @@ namespace CW_Study_Tool_4 {
             }
             else {
                 lvWords.Items.Clear();
+                chWords.Text = "Words";
                 rmGroup.Enabled = pnWords.Enabled = gpStudy.Enabled = gpExams.Enabled = false;
             }
         }
@@ -183,11 +184,28 @@ namespace CW_Study_Tool_4 {
                     "Are you sure you want to clear all the study record in this group?  You cannot undo this operation!",
                     "CW Study Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
-
+                    SQLiteCommand cmd;
+                    cmd = new SQLiteCommand("UPDATE words SET `state`=0 WHERE `group`=@group", Gib.con);
+                    cmd.Parameters.AddWithValue("@group", Gib.curGroup);
+                    cmd.ExecuteNonQuery();
+                    refreshWords();
                 }
             }
             else if (sender == riDelete) {
-
+                if (MessageBox.Show(this,
+                    "Are you sure you want to delete this group and ALL the words in this group?  You cannot undo this operation!",
+                    "CW Study Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
+                    SQLiteCommand cmd;
+                    cmd = new SQLiteCommand("DELETE FROM words WHERE `group`=@group", Gib.con);
+                    cmd.Parameters.AddWithValue("@group", Gib.curGroup);
+                    cmd.ExecuteNonQuery();
+                    cmd = new SQLiteCommand("DELETE FROM groups WHERE `id`=@id", Gib.con);
+                    cmd.Parameters.AddWithValue("@id", Gib.curGroup);
+                    cmd.ExecuteNonQuery();
+                    refreshGroups();
+                    lvGroups_SelectedIndexChanged(sender, e);
+                }
             }
             else if (sender == riExport) {
 
@@ -256,6 +274,11 @@ namespace CW_Study_Tool_4 {
 
         private void flpControls_BackColorChanged(object sender, EventArgs e) {
             flpControls.BackColor = Color.White;
+        }
+
+        public void btnBatch_Click(object sender, EventArgs e) {
+            FrmAddWord_Batch frm = new FrmAddWord_Batch();
+            frm.ShowDialog(this);
         }
     }
 }

@@ -57,7 +57,7 @@ namespace CW_Study_Tool_4 {
         private void btnBad_Click(object sender, EventArgs e) {
             if (lvWords.SelectedItems.Count > 0) {
                 ListViewItem item = lvWords.SelectedItems[0];
-                if (item.ForeColor == Color.DarkRed) {
+                if (item.ForeColor != Color.DarkRed) {
                     int id = Convert.ToInt32(item.Tag);
                     item.ForeColor = Color.DarkRed;
                     SQLiteCommand cmd = new SQLiteCommand("UPDATE words SET `state`=@state WHERE `id`=@id", Gib.con);
@@ -71,7 +71,7 @@ namespace CW_Study_Tool_4 {
         private void btnGood_Click(object sender, EventArgs e) {
             if (lvWords.SelectedItems.Count > 0) {
                 ListViewItem item = lvWords.SelectedItems[0];
-                if (item.ForeColor == Color.Green) {
+                if (item.ForeColor != Color.Green) {
                     int id = Convert.ToInt32(item.Tag);
                     item.ForeColor = Color.Green;
                     SQLiteCommand cmd = new SQLiteCommand("UPDATE words SET `state`=@state WHERE `id`=@id", Gib.con);
