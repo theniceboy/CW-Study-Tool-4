@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.pnWords = new System.Windows.Forms.Panel();
+            this.btnBatch = new DevComponents.DotNetBar.ButtonX();
             this.btnAddWord = new DevComponents.DotNetBar.ButtonX();
             this.lvWords = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.chWords = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,7 +58,7 @@
             this.gpExams = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnFullExam = new DevComponents.DotNetBar.ButtonX();
             this.btnQuickExam = new DevComponents.DotNetBar.ButtonX();
-            this.btnBatch = new DevComponents.DotNetBar.ButtonX();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.pnWords.SuspendLayout();
             this.pnMain.SuspendLayout();
             this.pnLearn.SuspendLayout();
@@ -87,6 +88,25 @@
             this.pnWords.Size = new System.Drawing.Size(376, 736);
             this.pnWords.TabIndex = 10;
             this.pnWords.BackColorChanged += new System.EventHandler(this.pnWords_BackColorChanged);
+            // 
+            // btnBatch
+            // 
+            this.btnBatch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBatch.BackColor = System.Drawing.Color.White;
+            this.btnBatch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBatch.FocusCuesEnabled = false;
+            this.btnBatch.Location = new System.Drawing.Point(191, 7);
+            this.btnBatch.Name = "btnBatch";
+            this.btnBatch.Size = new System.Drawing.Size(185, 56);
+            this.btnBatch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBatch.Symbol = "57672";
+            this.btnBatch.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnBatch.SymbolSize = 12F;
+            this.btnBatch.TabIndex = 7;
+            this.btnBatch.Text = " Batch";
+            this.btnBatch.Click += new System.EventHandler(this.btnBatch_Click);
             // 
             // btnAddWord
             // 
@@ -574,25 +594,6 @@
             this.btnQuickExam.Text = " Quick Exam";
             this.btnQuickExam.Click += new System.EventHandler(this.btnQuickExam_Click);
             // 
-            // btnBatch
-            // 
-            this.btnBatch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnBatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBatch.BackColor = System.Drawing.Color.White;
-            this.btnBatch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnBatch.FocusCuesEnabled = false;
-            this.btnBatch.Location = new System.Drawing.Point(191, 7);
-            this.btnBatch.Name = "btnBatch";
-            this.btnBatch.Size = new System.Drawing.Size(185, 56);
-            this.btnBatch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnBatch.Symbol = "57672";
-            this.btnBatch.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.btnBatch.SymbolSize = 12F;
-            this.btnBatch.TabIndex = 7;
-            this.btnBatch.Text = " Batch";
-            this.btnBatch.Click += new System.EventHandler(this.btnBatch_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
@@ -648,5 +649,6 @@
         private DevComponents.DotNetBar.RadialMenuItem riRename;
         private DevComponents.DotNetBar.RadialMenuItem riExport;
         private DevComponents.DotNetBar.ButtonX btnBatch;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

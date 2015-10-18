@@ -90,6 +90,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmRenameGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRenameGroup.Designer.cs">
+      <DependentUpon>FrmRenameGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmImportConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImportConfirm.Designer.cs">
+      <DependentUpon>FrmImportConfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,12 @@
     <Compile Include="Gib.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmRenameGroup.resx">
+      <DependentUpon>FrmRenameGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImportConfirm.resx">
+      <DependentUpon>FrmImportConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAddGroup.resx">
       <DependentUpon>FrmAddGroup.cs</DependentUpon>
     </EmbeddedResource>

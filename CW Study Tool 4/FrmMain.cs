@@ -36,7 +36,7 @@ namespace CW_Study_Tool_4 {
                 }
 
 
-            Gib.con = new SQLiteConnection("Data Source =" + Gib.`dbpath);
+            Gib.con = new SQLiteConnection("Data Source =" + Gib.dbpath);
             Gib.con.Open();
 
             SQLiteCommand cmdCreateTable =
@@ -200,18 +200,49 @@ namespace CW_Study_Tool_4 {
                     cmd = new SQLiteCommand("DELETE FROM words WHERE `group`=@group", Gib.con);
                     cmd.Parameters.AddWithValue("@group", Gib.curGroup);
                     cmd.ExecuteNonQuery();
+
                     cmd = new SQLiteCommand("DELETE FROM groups WHERE `id`=@id", Gib.con);
                     cmd.Parameters.AddWithValue("@id", Gib.curGroup);
                     cmd.ExecuteNonQuery();
+
                     refreshGroups();
                     lvGroups_SelectedIndexChanged(sender, e);
                 }
             }
             else if (sender == riExport) {
+                saveFileDialog.FileName = "My Group.cgdb";
+                saveFileDialog.Filter = "CW Study Tool 4 Word Group (*.cgdb)|*.cgdb";
+                if (saveFileDialog.ShowDialog(this) == DialogResult.OK) {
+                    SQLiteConnection econ = new SQLiteConnection("Data Source =" + saveFileDialog.FileName);
+                    econ.Open();
 
+                    SQLiteCommand cmdCreateTable =
+                        new SQLiteCommand("CREATE TABLE IF NOT EXISTS `words` (`word` TEXT, `trans` TEXT);", econ);
+                    cmdCreateTable.ExecuteNonQuery();
+
+                    SQLiteCommand cmdSearch, cmdAdd;
+                    SQLiteDataReader reader;
+                    string insertSQL = "INSERT INTO words (`word`, `trans`) VALUES (@word, @trans)";
+                    cmdSearch = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group", Gib.con);
+                    cmdSearch.Parameters.AddWithValue("@group", Gib.curGroup);
+                    reader = cmdSearch.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        cmdAdd = new SQLiteCommand(insertSQL, econ);
+                        cmdAdd.Parameters.AddWithValue("@word", reader["word"].ToString());
+                        cmdAdd.Parameters.AddWithValue("@trans", reader["trans"].ToString());
+                        cmdAdd.ExecuteNonQuery();
+                    }
+
+                    econ.Close();
+                    econ.Dispose();
+
+                    ToastNotification.Show(this, "This group of words has been successfully exported", null, 2000);
+                }
             }
             else if (sender == riRename) {
-
+                FrmRenameGroup frm = new FrmRenameGroup();
+                frm.ShowDialog(this);
             }
         }
 

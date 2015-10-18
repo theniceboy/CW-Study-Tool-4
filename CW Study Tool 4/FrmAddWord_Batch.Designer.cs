@@ -45,7 +45,7 @@
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAdd.FocusCuesEnabled = false;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(589, 910);
+            this.btnAdd.Location = new System.Drawing.Point(528, 811);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(220, 80);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -76,7 +76,7 @@
             this.tbWords.Name = "tbWords";
             this.tbWords.PreventEnterBeep = true;
             this.tbWords.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbWords.Size = new System.Drawing.Size(809, 892);
+            this.tbWords.Size = new System.Drawing.Size(748, 793);
             this.tbWords.TabIndex = 8;
             this.tbWords.WatermarkColor = System.Drawing.Color.Gainsboro;
             this.tbWords.WatermarkText = "The translation of the new word (optional), press Ctrl+Enter to add a new word, o" +
@@ -85,7 +85,7 @@
             // 
             // pnMain
             // 
-            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.pnMain.Controls.Add(this.label1);
             this.pnMain.Controls.Add(this.dictSelector);
             this.pnMain.Controls.Add(this.tbWords);
@@ -94,14 +94,16 @@
             this.pnMain.ForeColor = System.Drawing.Color.Black;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(813, 993);
+            this.pnMain.Size = new System.Drawing.Size(752, 894);
             this.pnMain.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 907);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(3, 808);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(300, 37);
             this.label1.TabIndex = 16;
@@ -120,9 +122,9 @@
             this.dictSelector.Items.AddRange(new object[] {
             this.ciNone,
             this.ciEnglish_Chinese});
-            this.dictSelector.Location = new System.Drawing.Point(0, 947);
+            this.dictSelector.Location = new System.Drawing.Point(0, 848);
             this.dictSelector.Name = "dictSelector";
-            this.dictSelector.Size = new System.Drawing.Size(583, 43);
+            this.dictSelector.Size = new System.Drawing.Size(522, 43);
             this.dictSelector.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dictSelector.TabIndex = 15;
             this.dictSelector.SelectedIndexChanged += new System.EventHandler(this.dictSelector_SelectedIndexChanged);
@@ -139,12 +141,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(813, 993);
+            this.ClientSize = new System.Drawing.Size(752, 894);
             this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
+            this.MinimumSize = new System.Drawing.Size(560, 513);
             this.Name = "FrmAddWord_Batch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CW Study Tool - Add Words";
