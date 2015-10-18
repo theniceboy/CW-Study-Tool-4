@@ -114,8 +114,6 @@ namespace CW_Study_Tool_4
                 lvItem.Text = reader["group"].ToString();
                 lvGroups.Items.Add(lvItem);
             }
-            if (lvGroups.Items.Count > 0)
-                rmGroup.Enabled = true;
 
             chGroups.Text = lvGroups.Items.Count.ToString() + " Groups";
         }
@@ -196,7 +194,7 @@ namespace CW_Study_Tool_4
 
         private void rmGroup_ItemClick(object sender, EventArgs e)
         {
-
+            MessageBox.Show(sender.ToString());
         }
 
         private void btnEditWord_Click(object sender, EventArgs e)
@@ -271,6 +269,11 @@ namespace CW_Study_Tool_4
         private void flpControls_BackColorChanged(object sender, EventArgs e)
         {
             flpControls.BackColor = Color.White;
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

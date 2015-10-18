@@ -38,6 +38,7 @@
             this.chGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddGroup = new DevComponents.DotNetBar.ButtonX();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.rmGroup = new DevComponents.DotNetBar.RadialMenu();
             this.riClearStudyRecord = new DevComponents.DotNetBar.RadialMenuItem();
             this.riDelete = new DevComponents.DotNetBar.RadialMenuItem();
@@ -101,7 +102,7 @@
             this.btnAddWord.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.btnAddWord.SymbolSize = 12F;
             this.btnAddWord.TabIndex = 6;
-            this.btnAddWord.Text = " Add Words";
+            this.btnAddWord.Text = " Word";
             this.btnAddWord.Click += new System.EventHandler(this.btnAddWord_Click);
             // 
             // lvWords
@@ -174,13 +175,13 @@
             this.btnAddGroup.FocusCuesEnabled = false;
             this.btnAddGroup.Location = new System.Drawing.Point(1, 10);
             this.btnAddGroup.Name = "btnAddGroup";
-            this.btnAddGroup.Size = new System.Drawing.Size(314, 56);
+            this.btnAddGroup.Size = new System.Drawing.Size(154, 56);
             this.btnAddGroup.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddGroup.Symbol = "58298";
             this.btnAddGroup.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.btnAddGroup.SymbolSize = 12F;
             this.btnAddGroup.TabIndex = 8;
-            this.btnAddGroup.Text = " New Group";
+            this.btnAddGroup.Text = " Group";
             this.btnAddGroup.Tooltip = "Add a new group to store some words. The usage of the \'groups\' is to categorize y" +
     "our words.";
             this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
@@ -188,6 +189,7 @@
             // pnMain
             // 
             this.pnMain.BackColor = System.Drawing.Color.Transparent;
+            this.pnMain.Controls.Add(this.buttonX1);
             this.pnMain.Controls.Add(this.rmGroup);
             this.pnMain.Controls.Add(this.dbSelector);
             this.pnMain.Controls.Add(this.rmSettings);
@@ -203,9 +205,28 @@
             this.pnMain.TabIndex = 14;
             this.pnMain.BackColorChanged += new System.EventHandler(this.pnMain_BackColorChanged);
             // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.BackColor = System.Drawing.Color.White;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.FocusCuesEnabled = false;
+            this.buttonX1.Location = new System.Drawing.Point(161, 10);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(154, 56);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.Symbol = "58052";
+            this.buttonX1.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.buttonX1.SymbolSize = 12F;
+            this.buttonX1.TabIndex = 17;
+            this.buttonX1.Text = " Group";
+            this.buttonX1.Tooltip = "Add a new group to store some words. The usage of the \'groups\' is to categorize y" +
+    "our words.";
+            // 
             // rmGroup
             // 
             this.rmGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.rmGroup.Diameter = 200;
             this.rmGroup.Enabled = false;
             this.rmGroup.ForeColor = System.Drawing.Color.Black;
             this.rmGroup.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -219,7 +240,7 @@
             this.rmGroup.Symbol = "57377";
             this.rmGroup.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.rmGroup.SymbolSize = 13F;
-            this.rmGroup.TabIndex = 15;
+            this.rmGroup.TabIndex = 16;
             this.rmGroup.ItemClick += new System.EventHandler(this.rmGroup_ItemClick);
             // 
             // riClearStudyRecord
@@ -234,7 +255,7 @@
             // riDelete
             // 
             this.riDelete.Name = "riDelete";
-            this.riDelete.Symbol = "57676";
+            this.riDelete.Symbol = "58825";
             this.riDelete.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
             this.riDelete.Text = "Delete";
             this.riDelete.Tooltip = "Delete the seleted group. Warning: this operation will delete this group <b>and a" +
@@ -588,9 +609,6 @@
         private System.Windows.Forms.Panel pnMain;
         private System.Windows.Forms.Panel pnLearn;
         private DevComponents.DotNetBar.RadialMenu rmSettings;
-        private DevComponents.DotNetBar.RadialMenuItem riDelete;
-        private DevComponents.DotNetBar.RadialMenuItem riExport;
-        private DevComponents.DotNetBar.RadialMenuItem riRename;
         private System.Windows.Forms.FlowLayoutPanel flpControls;
         private DevComponents.DotNetBar.Controls.GroupPanel gpOperations;
         private DevComponents.DotNetBar.ButtonX btnDeleteWord;
@@ -602,7 +620,11 @@
         private DevComponents.DotNetBar.ButtonX btnFullExam;
         private DevComponents.DotNetBar.ButtonX btnQuickExam;
         private DevComponents.DotNetBar.Controls.ComboBoxEx dbSelector;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.RadialMenu rmGroup;
         private DevComponents.DotNetBar.RadialMenuItem riClearStudyRecord;
+        private DevComponents.DotNetBar.RadialMenuItem riDelete;
+        private DevComponents.DotNetBar.RadialMenuItem riRename;
+        private DevComponents.DotNetBar.RadialMenuItem riExport;
     }
 }

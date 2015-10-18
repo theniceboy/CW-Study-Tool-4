@@ -53,7 +53,6 @@ namespace CW_Study_Tool_4
             {
                 --js;
                 btnNext_Click(sender, e);
-                MessageBox.Show(cur.ToString());
             }
             refreshGoodBadCount();
 
