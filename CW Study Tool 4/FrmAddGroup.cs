@@ -9,22 +9,19 @@ using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using DevComponents.DotNetBar.Controls;
 
-namespace CW_Study_Tool_4
-{
-    public partial class FrmAddGroup : DevComponents.DotNetBar.Metro.MetroForm
-    {
+namespace CW_Study_Tool_4 {
+    public partial class FrmAddGroup : DevComponents.DotNetBar.Metro.MetroForm {
         private string group;
         private SQLiteCommand cmdSearch;
         private SQLiteDataReader reader;
 
-        public FrmAddGroup()
-        {
+        public FrmAddGroup() {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            SQLiteCommand cmdAdd = new SQLiteCommand("INSERT INTO groups (`group`, `db`) VALUES (@group, " + Gib.curDB + ")", Gib.con);
+        private void btnAdd_Click(object sender, EventArgs e) {
+            SQLiteCommand cmdAdd =
+                new SQLiteCommand("INSERT INTO groups (`group`, `db`) VALUES (@group, " + Gib.curDB + ")", Gib.con);
             cmdAdd.Parameters.AddWithValue("@group", group);
             cmdAdd.ExecuteNonQuery();
             FrmMain frm = (FrmMain) this.Owner;
@@ -32,11 +29,9 @@ namespace CW_Study_Tool_4
             this.Close();
         }
 
-        private void tbGroup_TextChanged(object sender, EventArgs e)
-        {
+        private void tbGroup_TextChanged(object sender, EventArgs e) {
             group = tbGroup.Text.Trim();
-            if (group == "")
-            {
+            if (group == "") {
                 lbError.Text = "";
                 btnAdd.Enabled = false;
                 return;
@@ -45,33 +40,32 @@ namespace CW_Study_Tool_4
             cmdSearch.Parameters.AddWithValue("@group", group);
             cmdSearch.Parameters.AddWithValue("@db", Gib.curDB);
             reader = cmdSearch.ExecuteReader();
-            if (reader.HasRows)
-            {
+            if (reader.HasRows) {
                 lbError.Text = "Group name exists";
                 btnAdd.Enabled = false;
             }
-            else
-            {
+            else {
                 lbError.Text = "";
                 btnAdd.Enabled = true;
             }
         }
 
-        private void FrmAddGroup_Load(object sender, EventArgs e)
-        {
+        private void FrmAddGroup_Load(object sender, EventArgs e) {
             btnAdd.Enabled = false;
             lbError.ForeColor = Color.DarkRed;
             pnMain.BackColor = Color.White;
         }
 
-        private void tbGroup_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter && btnAdd.Enabled)
-            {
+        private void tbGroup_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter && btnAdd.Enabled) {
                 btnAdd_Click(sender, e);
             }
             if (e.Control && e.KeyCode == Keys.A)
-                try { ((TextBoxX)sender).SelectAll(); } catch { }
+                try {
+                    ((TextBoxX) sender).SelectAll();
+                }
+                catch {
+                }
         }
     }
 }

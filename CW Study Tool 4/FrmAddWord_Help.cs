@@ -7,12 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 
-namespace CW_Study_Tool_4
-{
-    public partial class FrmAddWord_Help : DevComponents.DotNetBar.Metro.MetroForm
-    {
-        public FrmAddWord_Help()
-        {
+namespace CW_Study_Tool_4 {
+    public partial class FrmAddWord_Help : DevComponents.DotNetBar.Metro.MetroForm {
+        public FrmAddWord_Help() {
             InitializeComponent();
         }
     }

@@ -9,10 +9,8 @@ using DevComponents.DotNetBar;
 using System.Data.SQLite;
 using DevComponents.DotNetBar.Controls;
 
-namespace CW_Study_Tool_4
-{
-    public partial class FrmAddWord : DevComponents.DotNetBar.Metro.MetroForm
-    {
+namespace CW_Study_Tool_4 {
+    public partial class FrmAddWord : DevComponents.DotNetBar.Metro.MetroForm {
         private SQLiteCommand cmdAddWord;
         private SQLiteCommand cmdSearch;
         private SQLiteDataReader reader;
@@ -21,15 +19,12 @@ namespace CW_Study_Tool_4
         private string strSQLInsert =
             "INSERT INTO words (`word`, `trans`, `group`, `state`, `gamestate`) VALUES (@word, @trans, @group, @state, @gamestate)";
 
-        public FrmAddWord()
-        {
+        public FrmAddWord() {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (tbWord.Text.Trim() == "")
-            {
+        private void btnAdd_Click(object sender, EventArgs e) {
+            if (tbWord.Text.Trim() == "") {
                 ToastNotification.Show(this, "New word cannot be empty!", null, 2000, eToastGlowColor.Red);
                 return;
             }
@@ -43,23 +38,19 @@ namespace CW_Study_Tool_4
             btnClear_Click(sender, e);
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
+        private void btnClear_Click(object sender, EventArgs e) {
             tbTrans.Text = tbWord.Text = "";
             btnAdd.Enabled = false;
         }
 
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
+        private void btnHelp_Click(object sender, EventArgs e) {
             FrmAddWord_Help frm = new FrmAddWord_Help();
             frm.ShowDialog(this);
         }
 
-        private void tbWord_TextChanged(object sender, EventArgs e)
-        {
+        private void tbWord_TextChanged(object sender, EventArgs e) {
             word = tbWord.Text.Trim();
-            if (word == "")
-            {
+            if (word == "") {
                 lbError.Text = "";
                 btnAdd.Enabled = false;
                 return;
@@ -68,36 +59,32 @@ namespace CW_Study_Tool_4
             cmdSearch.Parameters.AddWithValue("@group", Gib.curGroup);
             cmdSearch.Parameters.AddWithValue("@word", word);
             reader = cmdSearch.ExecuteReader();
-            if (reader.HasRows)
-            {
+            if (reader.HasRows) {
                 lbError.Text = "The word \"" + word + "\" already exists in your current group";
                 btnAdd.Enabled = false;
             }
-            else
-            {
+            else {
                 lbError.Text = "";
                 btnAdd.Enabled = true;
             }
         }
 
-        private void FrmKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.Enter && btnAdd.Enabled)
-            {
+        private void FrmKeyDown(object sender, KeyEventArgs e) {
+            if (e.Control && e.KeyCode == Keys.Enter && btnAdd.Enabled) {
                 btnAdd_Click(sender, e);
             }
             if (e.Control && e.KeyCode == Keys.A)
-                try { ((TextBoxX)sender).SelectAll(); } catch { }
+                try { ((TextBoxX) sender).SelectAll(); }
+                catch {
+                }
         }
 
-        private void FrmAddWord_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        private void FrmAddWord_FormClosing(object sender, FormClosingEventArgs e) {
             FrmMain frm = (FrmMain) this.Owner;
             frm.refreshWords();
         }
 
-        private void FrmAddWord_Load(object sender, EventArgs e)
-        {
+        private void FrmAddWord_Load(object sender, EventArgs e) {
             pnMain.BackColor = Color.White;
             lbError.ForeColor = Color.DarkRed;
         }

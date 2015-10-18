@@ -4,16 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CW_Study_Tool_4
-{
-    static class Program
-    {
+namespace CW_Study_Tool_4 {
+    internal static class Program {
         /// <summary>
-        /// 应用程序的主入口点。
+        /// Application Entry
         /// </summary>
         [STAThread]
-        static void Main()
-        {
+        private static void Main() {
             if (Environment.OSVersion.Version.Major >= 6)
                 SetProcessDPIAware();
             Application.EnableVisualStyles();

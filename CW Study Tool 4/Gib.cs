@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Data.SQLite;
 
-namespace CW_Study_Tool_4
-{
-    internal class Gib
-    {
+namespace CW_Study_Tool_4 {
+    internal class Gib {
         public static string compath = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\CW Soft";
         public static string hostpath = compath + "\\CW Study Tool 4";
         public static string dbpath = hostpath + "\\CWStudyTool4.db";
@@ -16,12 +14,11 @@ namespace CW_Study_Tool_4
         /* 0: walkthough
            1: multi-round */
 
-        public struct Word
-        {
+        public struct Word {
             public string word, trans;
             public int id, group, state, gamestate;
         };
-                   
+
         // OLD
         public static string frmlearntext;
 
@@ -50,6 +47,7 @@ namespace CW_Study_Tool_4
         public static string searchword;
     }
 }
+
 /*
  * 0 1 2 4 7 15
  * 

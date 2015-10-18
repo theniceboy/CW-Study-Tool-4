@@ -38,7 +38,7 @@
             this.chGroups = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddGroup = new DevComponents.DotNetBar.ButtonX();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.btnImport = new DevComponents.DotNetBar.ButtonX();
             this.rmGroup = new DevComponents.DotNetBar.RadialMenu();
             this.riClearStudyRecord = new DevComponents.DotNetBar.RadialMenuItem();
             this.riDelete = new DevComponents.DotNetBar.RadialMenuItem();
@@ -189,7 +189,7 @@
             // pnMain
             // 
             this.pnMain.BackColor = System.Drawing.Color.Transparent;
-            this.pnMain.Controls.Add(this.buttonX1);
+            this.pnMain.Controls.Add(this.btnImport);
             this.pnMain.Controls.Add(this.rmGroup);
             this.pnMain.Controls.Add(this.dbSelector);
             this.pnMain.Controls.Add(this.rmSettings);
@@ -205,22 +205,22 @@
             this.pnMain.TabIndex = 14;
             this.pnMain.BackColorChanged += new System.EventHandler(this.pnMain_BackColorChanged);
             // 
-            // buttonX1
+            // btnImport
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.BackColor = System.Drawing.Color.White;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.FocusCuesEnabled = false;
-            this.buttonX1.Location = new System.Drawing.Point(161, 10);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(154, 56);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.Symbol = "58052";
-            this.buttonX1.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
-            this.buttonX1.SymbolSize = 12F;
-            this.buttonX1.TabIndex = 17;
-            this.buttonX1.Text = " Group";
-            this.buttonX1.Tooltip = "Add a new group to store some words. The usage of the \'groups\' is to categorize y" +
+            this.btnImport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnImport.BackColor = System.Drawing.Color.White;
+            this.btnImport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnImport.FocusCuesEnabled = false;
+            this.btnImport.Location = new System.Drawing.Point(161, 10);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(154, 56);
+            this.btnImport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnImport.Symbol = "58052";
+            this.btnImport.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
+            this.btnImport.SymbolSize = 12F;
+            this.btnImport.TabIndex = 17;
+            this.btnImport.Text = " Import";
+            this.btnImport.Tooltip = "Add a new group to store some words. The usage of the \'groups\' is to categorize y" +
     "our words.";
             // 
             // rmGroup
@@ -620,7 +620,7 @@
         private DevComponents.DotNetBar.ButtonX btnFullExam;
         private DevComponents.DotNetBar.ButtonX btnQuickExam;
         private DevComponents.DotNetBar.Controls.ComboBoxEx dbSelector;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX btnImport;
         private DevComponents.DotNetBar.RadialMenu rmGroup;
         private DevComponents.DotNetBar.RadialMenuItem riClearStudyRecord;
         private DevComponents.DotNetBar.RadialMenuItem riDelete;

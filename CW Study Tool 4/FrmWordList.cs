@@ -9,27 +9,20 @@ using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 
-namespace CW_Study_Tool_4
-{
-    public partial class FrmWordList : DevComponents.DotNetBar.Metro.MetroForm
-    {
-        public FrmWordList()
-        {
+namespace CW_Study_Tool_4 {
+    public partial class FrmWordList : DevComponents.DotNetBar.Metro.MetroForm {
+        public FrmWordList() {
             InitializeComponent();
         }
 
-        private void lvWords_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvWords.SelectedItems.Count > 0)
-            {
+        private void lvWords_SelectedIndexChanged(object sender, EventArgs e) {
+            if (lvWords.SelectedItems.Count > 0) {
                 ListViewItem item = lvWords.SelectedItems[0];
-                if (item.ForeColor == Color.DarkRed)
-                {
+                if (item.ForeColor == Color.DarkRed) {
                     btnBad.Checked = true;
                     btnGood.Checked = false;
                 }
-                else if (item.ForeColor == Color.Green)
-                {
+                else if (item.ForeColor == Color.Green) {
                     btnBad.Checked = false;
                     btnGood.Checked = true;
                 }
@@ -40,8 +33,7 @@ namespace CW_Study_Tool_4
                 btnBad.Checked = btnGood.Checked = false;
         }
 
-        private void FrmWordList_Load(object sender, EventArgs e)
-        {
+        private void FrmWordList_Load(object sender, EventArgs e) {
             pnMain.BackColor = Color.White;
 
             SQLiteCommand cmdSearch;
@@ -51,8 +43,7 @@ namespace CW_Study_Tool_4
             cmdSearch = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group", Gib.con);
             cmdSearch.Parameters.AddWithValue("@group", Gib.curGroup);
             reader = cmdSearch.ExecuteReader();
-            while (reader.Read())
-            {
+            while (reader.Read()) {
                 ListViewItem lvItem = new ListViewItem();
                 lvItem.Tag = Convert.ToInt32(reader["id"]);
                 lvItem.Text = reader["word"].ToString();
@@ -63,13 +54,10 @@ namespace CW_Study_Tool_4
             }
         }
 
-        private void btnBad_Click(object sender, EventArgs e)
-        {
-            if (lvWords.SelectedItems.Count > 0)
-            {
+        private void btnBad_Click(object sender, EventArgs e) {
+            if (lvWords.SelectedItems.Count > 0) {
                 ListViewItem item = lvWords.SelectedItems[0];
-                if (item.ForeColor == Color.DarkRed)
-                {
+                if (item.ForeColor == Color.DarkRed) {
                     int id = Convert.ToInt32(item.Tag);
                     item.ForeColor = Color.DarkRed;
                     SQLiteCommand cmd = new SQLiteCommand("UPDATE words SET `state`=@state WHERE `id`=@id", Gib.con);
@@ -80,13 +68,10 @@ namespace CW_Study_Tool_4
             }
         }
 
-        private void btnGood_Click(object sender, EventArgs e)
-        {
-            if (lvWords.SelectedItems.Count > 0)
-            {
+        private void btnGood_Click(object sender, EventArgs e) {
+            if (lvWords.SelectedItems.Count > 0) {
                 ListViewItem item = lvWords.SelectedItems[0];
-                if (item.ForeColor == Color.Green)
-                {
+                if (item.ForeColor == Color.Green) {
                     int id = Convert.ToInt32(item.Tag);
                     item.ForeColor = Color.Green;
                     SQLiteCommand cmd = new SQLiteCommand("UPDATE words SET `state`=@state WHERE `id`=@id", Gib.con);
