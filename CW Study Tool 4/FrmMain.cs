@@ -22,7 +22,7 @@ namespace CW_Study_Tool_4 {
             if (!Directory.Exists(Gib.hostpath))
                 Directory.CreateDirectory(Gib.hostpath);
             if (!File.Exists(Gib.hostpath + "\\DefaultDB")) {
-                File.WriteAllText(Gib.hostpath + "\\DefaultDB", "0");
+                File.WriteAllText(Gib.hostpath + "\\DefaultDB", "1");
                 Gib.curDB = 0;
             }
             else
@@ -81,14 +81,16 @@ namespace CW_Study_Tool_4 {
             return false;
         }
 
-        private void refreshDBList() {
+        public void refreshDBList() {
             SQLiteCommand cmdSearch;
             SQLiteDataReader reader;
             cmdSearch = new SQLiteCommand("SELECT * FROM db", Gib.con);
             reader = cmdSearch.ExecuteReader();
             dbSelector.Items.Clear();
             while (reader.Read()) {
-                ComboBoxItem item = new ComboBoxItem(reader["id"].ToString(), reader["name"].ToString());
+                ComboBoxItem item = new ComboBoxItem();
+                item.Tag = Convert.ToInt32(reader["id"].ToString());
+                item.Text = reader["name"].ToString();
                 dbSelector.Items.Add(item);
                 if (Convert.ToInt32(reader["id"]) == Gib.curDB)
                     dbSelector.SelectedItem = item;
@@ -284,11 +286,19 @@ namespace CW_Study_Tool_4 {
         }
 
         private void dbSelector_SelectedIndexChanged(object sender, EventArgs e) {
-
+            SQLiteCommand cmd = new SQLiteCommand("SELECT `id` FROM db WHERE `name`=@name", Gib.con);
+            cmd.Parameters.AddWithValue("@name", dbSelector.SelectedItem.ToString());
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            Gib.curDB = Convert.ToInt32(reader["id"]);
+            refreshGroups();
         }
 
         private void rmSettings_ItemClick(object sender, EventArgs e) {
-
+            if (sender == riImportDB) {
+                FrmDownloadCollection frm = new FrmDownloadCollection();
+                frm.ShowDialog(this);
+            }
         }
 
         private void pnMain_BackColorChanged(object sender, EventArgs e) {
@@ -310,6 +320,11 @@ namespace CW_Study_Tool_4 {
         public void btnBatch_Click(object sender, EventArgs e) {
             FrmAddWord_Batch frm = new FrmAddWord_Batch();
             frm.ShowDialog(this);
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

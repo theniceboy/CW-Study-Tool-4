@@ -28,7 +28,7 @@ namespace CW_Study_Tool_4 {
         private SpeechSynthesizer spr = new SpeechSynthesizer();
 
         public void getWordList() {
-            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group ORDER BY `word`", Gib.con);
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM words WHERE `group`=@group", Gib.con);
             // ORDER BY `word`
             cmd.Parameters.AddWithValue("@group", Gib.curGroup);
             SQLiteDataReader reader = cmd.ExecuteReader();

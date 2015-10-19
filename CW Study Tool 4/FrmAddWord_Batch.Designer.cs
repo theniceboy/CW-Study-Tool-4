@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddWord_Batch));
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.tbWords = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.pnMain = new System.Windows.Forms.Panel();
@@ -45,9 +46,9 @@
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAdd.FocusCuesEnabled = false;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(528, 811);
+            this.btnAdd.Location = new System.Drawing.Point(469, 721);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(220, 80);
+            this.btnAdd.Size = new System.Drawing.Size(196, 71);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAdd.Symbol = "58826";
             this.btnAdd.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -70,13 +71,13 @@
             this.tbWords.DisabledBackColor = System.Drawing.Color.White;
             this.tbWords.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.tbWords.ForeColor = System.Drawing.Color.Black;
-            this.tbWords.Location = new System.Drawing.Point(0, 12);
+            this.tbWords.Location = new System.Drawing.Point(0, 11);
             this.tbWords.MaxLength = 2147483647;
             this.tbWords.Multiline = true;
             this.tbWords.Name = "tbWords";
             this.tbWords.PreventEnterBeep = true;
             this.tbWords.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbWords.Size = new System.Drawing.Size(748, 793);
+            this.tbWords.Size = new System.Drawing.Size(665, 705);
             this.tbWords.TabIndex = 8;
             this.tbWords.WatermarkColor = System.Drawing.Color.Gainsboro;
             this.tbWords.WatermarkText = "The translation of the new word (optional), press Ctrl+Enter to add a new word, o" +
@@ -94,7 +95,7 @@
             this.pnMain.ForeColor = System.Drawing.Color.Black;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(752, 894);
+            this.pnMain.Size = new System.Drawing.Size(668, 795);
             this.pnMain.TabIndex = 13;
             // 
             // label1
@@ -103,9 +104,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(3, 808);
+            this.label1.Location = new System.Drawing.Point(3, 718);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 37);
+            this.label1.Size = new System.Drawing.Size(270, 32);
             this.label1.TabIndex = 16;
             this.label1.Text = "Auto Detect Translation:";
             // 
@@ -118,13 +119,13 @@
             this.dictSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dictSelector.ForeColor = System.Drawing.Color.Black;
             this.dictSelector.FormattingEnabled = true;
-            this.dictSelector.ItemHeight = 37;
+            this.dictSelector.ItemHeight = 33;
             this.dictSelector.Items.AddRange(new object[] {
             this.ciNone,
             this.ciEnglish_Chinese});
-            this.dictSelector.Location = new System.Drawing.Point(0, 848);
+            this.dictSelector.Location = new System.Drawing.Point(0, 754);
             this.dictSelector.Name = "dictSelector";
-            this.dictSelector.Size = new System.Drawing.Size(522, 43);
+            this.dictSelector.Size = new System.Drawing.Size(464, 39);
             this.dictSelector.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dictSelector.TabIndex = 15;
             this.dictSelector.SelectedIndexChanged += new System.EventHandler(this.dictSelector_SelectedIndexChanged);
@@ -139,15 +140,16 @@
             // 
             // FrmAddWord_Batch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(752, 894);
+            this.ClientSize = new System.Drawing.Size(668, 795);
             this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(560, 513);
+            this.MinimumSize = new System.Drawing.Size(501, 464);
             this.Name = "FrmAddWord_Batch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CW Study Tool - Add Words";

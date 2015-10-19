@@ -29,6 +29,7 @@ namespace CW_Study_Tool_4
         private void InitializeComponent()
         {
             System.Windows.Forms.ColumnHeader chWord;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmWordList));
             this.lvWords = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.pnMain = new System.Windows.Forms.Panel();
             this.btnBad = new DevComponents.DotNetBar.ButtonX();
@@ -131,8 +132,8 @@ namespace CW_Study_Tool_4
             this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmWordList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Word List";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRenameGroup));
             this.tbGroup = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.lbError = new System.Windows.Forms.Label();
@@ -48,10 +49,10 @@
             this.tbGroup.DisabledBackColor = System.Drawing.Color.White;
             this.tbGroup.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.tbGroup.ForeColor = System.Drawing.Color.Black;
-            this.tbGroup.Location = new System.Drawing.Point(0, 14);
+            this.tbGroup.Location = new System.Drawing.Point(0, 12);
             this.tbGroup.Name = "tbGroup";
             this.tbGroup.PreventEnterBeep = true;
-            this.tbGroup.Size = new System.Drawing.Size(804, 67);
+            this.tbGroup.Size = new System.Drawing.Size(715, 61);
             this.tbGroup.TabIndex = 0;
             this.tbGroup.TextChanged += new System.EventHandler(this.tbGroup_TextChanged);
             this.tbGroup.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbGroup_KeyDown);
@@ -62,9 +63,9 @@
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(517, 89);
+            this.btnAdd.Location = new System.Drawing.Point(460, 79);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(287, 84);
+            this.btnAdd.Size = new System.Drawing.Size(255, 75);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAdd.Symbol = "58826";
             this.btnAdd.SymbolSet = DevComponents.DotNetBar.eSymbolSet.Material;
@@ -79,9 +80,9 @@
             this.lbError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lbError.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lbError.ForeColor = System.Drawing.Color.Black;
-            this.lbError.Location = new System.Drawing.Point(14, 104);
+            this.lbError.Location = new System.Drawing.Point(12, 92);
             this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(497, 61);
+            this.lbError.Size = new System.Drawing.Size(442, 54);
             this.lbError.TabIndex = 2;
             // 
             // pnMain
@@ -94,18 +95,19 @@
             this.pnMain.ForeColor = System.Drawing.Color.Black;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(807, 176);
+            this.pnMain.Size = new System.Drawing.Size(717, 156);
             this.pnMain.TabIndex = 3;
             // 
             // FrmRenameGroup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(807, 176);
+            this.ClientSize = new System.Drawing.Size(717, 156);
             this.Controls.Add(this.pnMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRenameGroup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CW Study Tool 4 - Add Group";

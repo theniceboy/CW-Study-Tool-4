@@ -71,9 +71,7 @@ namespace CW_Study_Tool_4 {
             if (e.Control && e.KeyCode == Keys.A)
                 try {
                     ((TextBoxX) sender).SelectAll();
-                }
-                catch {
-                }
+                } catch { }
         }
     }
 }
