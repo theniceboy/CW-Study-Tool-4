@@ -65,7 +65,6 @@ namespace CW_Study_Tool_4
             this.lvWords.Name = "lvWords";
             this.lvWords.ShowItemToolTips = true;
             this.lvWords.Size = new System.Drawing.Size(592, 768);
-            this.lvWords.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvWords.TabIndex = 0;
             this.lvWords.UseCompatibleStateImageBehavior = false;
             this.lvWords.View = System.Windows.Forms.View.Details;

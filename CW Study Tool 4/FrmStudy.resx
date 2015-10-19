@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnReplay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnReplay.Font" type="System.Drawing.Font, System.Drawing">
@@ -154,7 +154,7 @@
     <value>4</value>
   </data>
   <data name="btnWordList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom</value>
   </data>
   <data name="btnWordList.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -187,7 +187,7 @@
     <value>5</value>
   </data>
   <data name="ShowTraslation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom</value>
   </data>
   <data name="ShowTraslation.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -220,7 +220,7 @@
     <value>6</value>
   </data>
   <data name="btnBad.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom</value>
   </data>
   <data name="btnBad.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -254,7 +254,7 @@
     <value>8</value>
   </data>
   <data name="btnGood.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom</value>
   </data>
   <data name="btnGood.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -288,7 +288,7 @@
     <value>10</value>
   </data>
   <data name="btnPrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom</value>
   </data>
   <data name="btnPrevious.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -318,7 +318,7 @@
     <value>9</value>
   </data>
   <data name="btnNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom</value>
   </data>
   <data name="btnNext.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -354,7 +354,7 @@
     <value>Segoe UI, 22pt</value>
   </data>
   <data name="tbTrans.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 212</value>
+    <value>0, 219</value>
   </data>
   <data name="tbTrans.MaxLength" type="System.Int32, mscorlib">
     <value>2147483647</value>
@@ -363,7 +363,7 @@
     <value>True</value>
   </data>
   <data name="tbTrans.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1333, 487</value>
+    <value>1333, 480</value>
   </data>
   <data name="tbTrans.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -417,7 +417,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -447,7 +447,7 @@
     <value>0</value>
   </data>
   <data name="sbUseShortcut.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom</value>
   </data>
   <data name="sbUseShortcut.Location" type="System.Drawing.Point, System.Drawing">
     <value>1220, 734</value>
@@ -509,7 +509,7 @@
     <value>2</value>
   </data>
   <data name="buttonX1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom</value>
   </data>
   <data name="buttonX1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -848,6 +848,9 @@
         Bo1rQ9wOANjBjJ0hBzt2bZ06WKeLq32t3HdtO3qxT/6NBFwHYB0D64joUgBTaCcbLUI7qOi7seZaH1uA
         9h6aFwCcBHCMmV8nYD+A/Qw8FwTBrx773Kpa1874/+Yvr1N7i7QvAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1362, 500</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

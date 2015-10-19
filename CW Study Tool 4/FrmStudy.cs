@@ -98,6 +98,7 @@ namespace CW_Study_Tool_4 {
             else
                 this.Text = originTitle + " ( " + js + " / " + wordCountThisRound + " )";
             tbWord.Text = words[cur].word;
+            tbTrans.Text = "";
             if (doReplay)
                 replay();
             btnGood.Checked = (words[cur].state == 1);
